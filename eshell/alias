@@ -1,0 +1,2 @@
+alias gc open -a Google\ Chrome\ Canary.app $1
+alias ll ls -lah

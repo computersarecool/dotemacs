@@ -1,0 +1,24 @@
+# Annyoing automatically created files
+.DS_Store
+ido.last
+.mc-lists.el
+
+# Generic emacs folders
+games
+url
+vendor
+elpa
+tramp
+eshell/*
+!eshell/alias
+
+# Auto-saving folders
+.saves
+auto-save-list
+
+# Files created by using extensions
+ede-projects.el
+ac-comphist.dat
+.yas-compiled-snippets.el
+.python-environments
+
