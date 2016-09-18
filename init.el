@@ -113,21 +113,31 @@
 (global-auto-complete-mode t)
 
 
-;; javascript things
-(add-to-list 'auto-mode-alist '("\\.js" . js2-mode))
-(add-hook 'js2-mode-hook (lambda () (setq mode-name "Zono-mode")))
-(setq-default js2-basic-offset 2)
-
 ;; skewer mode
 (skewer-setup)
 
+
 ;; flycheck mode
 (global-flycheck-mode)
+
 
 ;; tern mode
 (setq tern-command "cd willy/AppData/Romaning/npm/node_modules/tern/bin/tern")
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 
+
+;; javascript things
+(add-to-list 'auto-mode-alist '("\\.js" . js2-mode))
+(setq-default js2-basic-offset 2)
+(setq js2-mode-show-parse-errors nil)
+(setq js2-mode-show-strict-warnings nil)
+(add-hook 'js2-mode-hook
+          (lambda ()
+            (setq mode-name "Zono-mode")
+            (tern-mode t)))
+
+
+;; tern mode
 (eval-after-load 'tern
   '(progn
      (require 'tern-auto-complete)
@@ -205,8 +215,9 @@
 (blink-cursor-mode t)
 (menu-bar-mode 0)
 (tool-bar-mode 0)
-(display-time-mode t)
-(setq display-time-24hr-format t)
+(setq display-time-day-and-date t
+      display-time-24hr-format t)
+(display-time)
 (show-paren-mode t)
 (electric-pair-mode t)
 (setq column-numver-mode t)
@@ -239,7 +250,6 @@
    (quote
     (editorconfig auto-complete cyberpunk-theme simple-httpd json-mode nodejs-repl repl-toggle tern-auto-complete tern yasnippet multiple-cursors neotree)))
  '(tool-bar-mode nil)
- '(display-time-mode t)
  '(show-paren-mode t) 
  '(send-mail-function (quote smtpmail-send-it))
  '(smtpmail-smtp-server "smtp.gmail.com")
