@@ -125,6 +125,7 @@
 (global-flycheck-mode)
 
 ;; tern mode
+(setq tern-command "cd willy/AppData/Romaning/npm/node_modules/tern/bin/tern")
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 
 (eval-after-load 'tern
