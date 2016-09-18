@@ -18,6 +18,7 @@
 		    glsl-mode
 		    flycheck
 		    multiple-cursors
+                    rainbow-delimiters
 		    js2-mode
 		    auto-complete
 		    ac-capf
