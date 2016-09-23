@@ -119,7 +119,7 @@
 
 ;; flycheck mode
 (global-flycheck-mode)
-
+(setq-default flycheck-disabled-checkers '(javascript-jshint))
 
 ;; javascript things
 (add-to-list 'auto-mode-alist '("\\.js" . js2-mode))
