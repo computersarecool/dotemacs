@@ -119,7 +119,7 @@
 
 ;; flycheck mode
 (global-flycheck-mode)
-
+(setq-default flycheck-disabled-checkers '(javascript-jshint))
 
 ;; tern mode
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
