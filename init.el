@@ -119,7 +119,7 @@
 
 ;; flycheck mode
 (global-flycheck-mode)
-(setq-default flycheck-disabled-checkers '(javascript-jshint))
+(setq-default flycheck-disabled-checkers '(javascript-jshint javascript-eslint))
 
 ;; tern mode
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
@@ -128,6 +128,7 @@
 ;; javascript things
 (add-to-list 'auto-mode-alist '("\\.js" . js2-mode))
 (setq-default js2-basic-offset 2)
+(setq js2-indent-switch-body t)
 (setq js2-mode-show-parse-errors nil)
 (setq js2-mode-show-strict-warnings nil)
 (add-hook 'js2-mode-hook
