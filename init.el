@@ -2,7 +2,6 @@
 (when (version<= emacs-version "24.0")
   (message "You are running some old-ass emacs. As in %s.%s old." emacs-major-version emacs-minor-version))
 
-
 ;; package management
 (setq package-list '(
                     nodejs-repl
@@ -17,9 +16,12 @@
 		    ws-butler
 		    glsl-mode
 		    flycheck
-		    multiple-cursors
+                    multiple-cursors
+                    rainbow-mode
                     rainbow-delimiters
+                    exec-path-from-shell
 		    js2-mode
+                    circe
 		    auto-complete
 		    ac-capf
 		    neotree
@@ -46,6 +48,10 @@
     (package-install package)))
 
 
+;; set path correctly
+(exec-path-from-shell-initialize)
+
+
 ;; change location of backups
 (setq backup-directory-alist
       `(("." . ,"~/.emacs.d/.saves/")))
@@ -68,7 +74,9 @@
 
 
 ;; butler mode
-(ws-butler-mode t)
+(ws-butler-global-mode t)
+(setq require-final-newline t)
+(ws-butler-trim-eob-lines)
 
 
 ;; eshell
@@ -92,6 +100,20 @@
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 (global-set-key (kbd "M-n n") 'neotree)
+
+;; circe
+(setq my-credentials-file "~/.private.el")
+(defun my-sasl-password (_)
+  (with-temp-buffer
+    (insert-file-contents-literally my-credentials-file)
+    (plist-get (read (buffer-string)) :freenode-password)))
+(setq circe-network-options
+      '(("Freenode"
+         :tls t
+         :nick "optonox"
+         :sasl-username "optonox"
+         :sasl-password my-sasl-password
+         :channels ("#emacs"))))
 
 
 ;; multiple cursors
@@ -233,6 +255,11 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 
 
+;; enable rainbow mode
+(add-hook 'css-mode-hook 'my-css-mode-hook)
+(defun my-css-mode-hook ()
+  (rainbow-mode t))
+
 ;; turn off tabs
 (setq-default indent-tabs-mode nil)
 
@@ -254,4 +281,3 @@
  '(send-mail-function (quote smtpmail-send-it))
  '(smtpmail-smtp-server "smtp.gmail.com")
  '(smtpmail-smtp-service 25))
-
