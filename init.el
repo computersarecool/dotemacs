@@ -22,6 +22,7 @@
                     exec-path-from-shell
 		    js2-mode
                     circe
+                    buffer-move
 		    auto-complete
 		    ac-capf
 		    neotree
