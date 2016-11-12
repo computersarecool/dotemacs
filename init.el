@@ -149,7 +149,7 @@
 
 
 ;; javascript things
-(add-to-list 'auto-mode-alist '("\\.js" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\" . js2-mode))
 (setq-default js2-basic-offset 2)
 (setq js2-indent-switch-body t)
 (setq js2-mode-show-parse-errors nil)
@@ -158,6 +158,10 @@
           (lambda ()
             (setq mode-name "Zono-mode")
             (tern-mode t)))
+
+
+;; json mode
+(add-to-list 'auto-mode-alist '("\\.json" . json-mode))
 
 
 ;; tern mode
