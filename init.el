@@ -103,7 +103,7 @@
 (global-set-key (kbd "M-n n") 'neotree)
 
 ;; circe
-(setq my-credentials-file "~/.private.el")
+(setq my-credentials-file "~/documents/safe/private.el")
 (defun my-sasl-password (_)
   (with-temp-buffer
     (insert-file-contents-literally my-credentials-file)
