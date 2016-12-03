@@ -27,7 +27,8 @@
 		    ac-capf
 		    neotree
 		    yasnippet
-		    cyberpunk-theme
+                    cyberpunk-theme
+                    smart-mode-line
 		    ))
 
 
@@ -230,9 +231,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 102 :width normal))))
  '(js2-function-param ((t (:foreground "green"))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "brightred"))))
- '(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 102 :width normal))))
  '(region ((t (:background "color-33" :foreground "color-251"))))
  '(show-paren-match ((t (:background "green" :foreground "#000000"))))
  '(tooltip ((t (:inherit variable-pitch :background "cyan" :foreground "black")))))
@@ -250,6 +251,11 @@
 (setq column-numver-mode t)
 (setq require-final-newline t)
 (load-theme 'cyberpunk t)
+(setq sml/no-confirm-load-theme t)
+(setq sml/theme 'respectful)
+(sml/setup)
+(setq sml/shorten-directory t)
+(setq sml/name-width 20)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'find-file-hook 'linum-mode)
 (add-hook 'find-file-hook 'ac-emoji-setup)
@@ -278,11 +284,14 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
  '(package-selected-packages
    (quote
     (editorconfig auto-complete cyberpunk-theme simple-httpd json-mode nodejs-repl repl-toggle tern-auto-complete tern yasnippet multiple-cursors neotree)))
- '(tool-bar-mode nil)
- '(show-paren-mode t) 
  '(send-mail-function (quote smtpmail-send-it))
+ '(show-paren-mode t)
  '(smtpmail-smtp-server "smtp.gmail.com")
- '(smtpmail-smtp-service 25))
+ '(smtpmail-smtp-service 25)
+ '(tool-bar-mode nil))
