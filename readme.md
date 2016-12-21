@@ -3,6 +3,8 @@ My emacs config be like........ohhhh
 
 
 ## Things to do:
+ - Powerline theme
+ - Projectile
  
 ### Explore further:
 - ido mode
