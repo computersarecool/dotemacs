@@ -3,6 +3,11 @@ My emacs config be like........ohhhh
 
 
 ## Things to do:
+ - Examine what exec-path-from-shell does
+ - Make logging into circe ask for a password
+ - Un-disable autosave, save those file to the saves directory
+ PICKUP:
+ Guess-style mode (133)
  - Powerline theme
  - Projectile
  

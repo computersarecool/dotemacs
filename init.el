@@ -2,31 +2,31 @@
 (when (version<= emacs-version "24.0")
   (message "You are running some old-ass emacs. As in %s.%s old." emacs-major-version emacs-minor-version))
 
-;; package management
+;; all the packages used
 (setq package-list '(
+                    auto-complete
+                    buffer-move
+                    ac-capf
+                    ac-emoji
+                    exec-path-from-shell
                     nodejs-repl
+                    circe
+                    neotree
+                    yasnippet
+                    flycheck
                     tern
                     tern-auto-complete
+                    js2-mode
+                    json-mode
                     jedi
 		    skewer-mode
-		    markdown-mode
-		    json-mode
-		    ac-emoji
-		    guess-style
-		    ws-butler
-		    glsl-mode
-		    flycheck
+                    markdown-mode
+                    glsl-mode
                     multiple-cursors
+                    guess-style
+                    ws-butler
                     rainbow-mode
                     rainbow-delimiters
-                    exec-path-from-shell
-		    js2-mode
-                    circe
-                    buffer-move
-		    auto-complete
-		    ac-capf
-		    neotree
-		    yasnippet
                     cyberpunk-theme
                     smart-mode-line
 		    ))
@@ -69,18 +69,6 @@
 (setq auto-save-default nil)
 
 
-;; guess-style mode
-(autoload 'guess-style-set-variable "guess-style" nil t)
-(autoload 'guess-style-guess-variable "guess-style")
-(autoload 'guess-style-guess-all "guess-style" nil t)
-
-
-;; butler mode
-(ws-butler-global-mode t)
-(setq require-final-newline t)
-(ws-butler-trim-eob-lines)
-
-
 ;; eshell
 ;; prompt
 (setq eshell-prompt-function (lambda nil
@@ -103,7 +91,9 @@
 (global-set-key [f8] 'neotree-toggle)
 (global-set-key (kbd "M-n n") 'neotree)
 
+
 ;; circe
+;; TODO: Ask for a password
 (setq my-credentials-file "~/documents/safe/private.el")
 (defun my-sasl-password (_)
   (with-temp-buffer
@@ -135,6 +125,22 @@
 (ac-config-default)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (global-auto-complete-mode t)
+
+
+;; turn off tabs
+(setq-default indent-tabs-mode nil)
+
+;; guess-style mode
+(autoload 'guess-style-set-variable "guess-style" nil t)
+(autoload 'guess-style-guess-variable "guess-style")
+(autoload 'guess-style-guess-all "guess-style" nil t)
+
+
+;; butler mode
+(ws-butler-global-mode t)
+(setq require-final-newline t)
+(ws-butler-trim-eob-lines)
+
 
 
 ;; skewer mode
@@ -216,10 +222,6 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 
 
-;; turn off tabs
-(setq-default indent-tabs-mode nil)
-
-
 ;; set wdired options
 (setq wdired-allow-to-change-permissions t)
 (setq wdired-confirm-overwrite t)
@@ -240,7 +242,6 @@
 
 
 ;; set the global cosmetics
-(blink-cursor-mode t)
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (setq display-time-day-and-date t
@@ -271,8 +272,6 @@
 (defun my-css-mode-hook ()
   (rainbow-mode t))
 
-;; turn off tabs
-(setq-default indent-tabs-mode nil)
 
 ;; entrance message
 (add-hook 'after-init-hook
@@ -284,6 +283,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(css-indent-offset 2)
  '(custom-enabled-themes (quote (cyberpunk)))
  '(custom-safe-themes
    (quote
