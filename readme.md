@@ -3,8 +3,6 @@ My emacs config be like........ohhhh
 
 
 ## Things to do:
- - Make sure that the backup file directory saving works
- - Install Yasnippet
  - Examine what exec-path-from-shell does in init file
  - Make logging into circe ask for a password
  - Un-disable autosave, save those file to the saves directory

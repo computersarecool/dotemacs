@@ -1,10 +1,13 @@
 ;;; Package --- summary
 
 ;;; Commentary:
-;; my Emacs initialziation file
+;; my Emacs initialization file
 
 ;;; Code:
 ;; make sure we are working with some modern code
+;;(setq debug-on-error t)
+;;(debug-on-entry 'yas--schedule-jit)
+
 (when (version<= emacs-version "24.0")
   (message "You are running some old-ass emacs. As in %s.%s old." emacs-major-version emacs-minor-version))
 
@@ -57,20 +60,16 @@
 ;; set path correctly
 (exec-path-from-shell-initialize)
 
-;; TODO
+
 ;; yasnippit (load before auto complete)
-;;(require 'yasnippet)
-;;(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
-;;(yas-global-mode 1)
+(require 'yasnippet)
+(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+(yas-global-mode 1)
 
 
-;; TODO: Check that this works and backups save
+;; handle back ups and auto-saves
 (defvar auto-save-location "~/.emacs.d/.saves/")
 
-;;(setq auto-save-default nil)
-;;(setq make-backup-files nil)
-
-;; change location of backups
 (setq backup-directory-alist
       `((".*" . ,auto-save-location)))
 (setq auto-save-file-name-transforms
@@ -265,11 +264,6 @@
 (setq column-numver-mode t)
 (setq require-final-newline t)
 (load-theme 'cyberpunk t)
-(setq sml/no-confirm-load-theme t)
-(setq sml/theme 'respectful)
-(sml/setup)
-(setq sml/shorten-directory t)
-(setq sml/name-width 20)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'find-file-hook 'linum-mode)
 (add-hook 'find-file-hook 'ac-emoji-setup)
