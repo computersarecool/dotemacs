@@ -1,4 +1,4 @@
-;;; package --- summary
+;;; Package --- summary
 
 ;;; Commentary:
 ;; my Emacs initialziation file
@@ -9,17 +9,13 @@
   (message "You are running some old-ass emacs. As in %s.%s old." emacs-major-version emacs-minor-version))
 
 
-;; set path correctly
-(exec-path-from-shell-initialize)
-
-
 ;; all the packages used
-(defvar package-list '(
+(setq package-list '(
+                    exec-path-from-shell
                     auto-complete
                     buffer-move
                     ac-capf
                     ac-emoji
-                    exec-path-from-shell
                     nodejs-repl
                     circe
                     neotree
@@ -27,25 +23,21 @@
                     flycheck
                     tern
                     tern-auto-complete
+                    jedi
+                    multiple-cursors
+                    ws-butler
                     js2-mode
                     json-mode
-                    jedi
-		    skewer-mode
+                    skewer-mode
                     markdown-mode
                     glsl-mode
-                    multiple-cursors
-                    guess-style
-                    ws-butler
                     rainbow-mode
                     rainbow-delimiters
                     cyberpunk-theme
-                    smart-mode-line
-		    ))
+                    ))
 
-
-(setq package-archives '(("elpa" . "http://tromey.com/elpa/")
-			 ("melpa" . "http://melpa.milkbox.net/packages/")
-                         ("gnu" . "http://elpa.gnu.org/packages/")
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")))
 
 ;; activate all packages
@@ -61,14 +53,28 @@
     (package-install package)))
 
 
-;; TODO: Check that this works
+;; TODO
+;; set path correctly
+(exec-path-from-shell-initialize)
+
+;; TODO
+;; yasnippit (load before auto complete)
+;;(require 'yasnippet)
+;;(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+;;(yas-global-mode 1)
+
+
+;; TODO: Check that this works and backups save
 (defvar auto-save-location "~/.emacs.d/.saves/")
+
+;;(setq auto-save-default nil)
+;;(setq make-backup-files nil)
 
 ;; change location of backups
 (setq backup-directory-alist
-      `(("." . ,auto-save-location)))
+      `((".*" . ,auto-save-location)))
 (setq auto-save-file-name-transforms
-      `(("." ,auto-save-location t)))
+      `((".*" ,auto-save-location t)))
 
 (setq delete-old-versions t
       kept-new-versions 6
@@ -92,7 +98,7 @@
     (propertize " $ " 'face `(:foreground "white")))))
 (setq eshell-highlight-prompt nil)
 
-;; clear it!
+;; clear it
 (defun eshell/clear ()
   (let ((inhibit-read-only t))
     (erase-buffer)))
@@ -128,11 +134,6 @@
 (global-set-key (kbd "C-c C-y x") 'mc/mark-all-like-this)
 
 
-;; yasnippit (load before auto complete)
-(require 'yasnippet)
-(yas-global-mode 1)
-
-
 ;; autocomplete mode
 (ac-config-default)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
@@ -143,9 +144,9 @@
 (setq-default indent-tabs-mode nil)
 
 ;; guess-style mode
-(autoload 'guess-style-set-variable "guess-style" nil t)
-(autoload 'guess-style-guess-variable "guess-style")
-(autoload 'guess-style-guess-all "guess-style" nil t)
+;;(autoload 'guess-style-set-variable "guess-style" nil t)
+;;(autoload 'guess-style-guess-variable "guess-style")
+;;(autoload 'guess-style-guess-all "guess-style" nil t)
 
 
 ;; butler mode
