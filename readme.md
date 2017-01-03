@@ -9,6 +9,7 @@ My emacs config be like........ohhhh
  - Use Guess-style mode (133)
  - Powerline theme
  - Projectile
+ - Show whitespace
  
 ### Explore further:
 - ido mode
