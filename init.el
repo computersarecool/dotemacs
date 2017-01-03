@@ -1,9 +1,20 @@
+;;; package --- summary
+
+;;; Commentary:
+;; my Emacs initialziation file
+
+;;; Code:
 ;; make sure we are working with some modern code
 (when (version<= emacs-version "24.0")
   (message "You are running some old-ass emacs. As in %s.%s old." emacs-major-version emacs-minor-version))
 
+
+;; set path correctly
+(exec-path-from-shell-initialize)
+
+
 ;; all the packages used
-(setq package-list '(
+(defvar package-list '(
                     auto-complete
                     buffer-move
                     ac-capf
@@ -50,24 +61,25 @@
     (package-install package)))
 
 
-;; set path correctly
-(exec-path-from-shell-initialize)
-
+;; TODO: Check that this works
+(setq auto-save-location "~/.emacs.d/.saves/")
 
 ;; change location of backups
 (setq backup-directory-alist
-      `(("." . ,"~/.emacs.d/.saves/")))
+      `(("." . ,auto-save-location)))
 (setq auto-save-file-name-transforms
-            `(("." ,"~/.emacs.d/.saves/" t)))
+      `(("." ,auto-save-location t)))
 
 (setq delete-old-versions t
       kept-new-versions 6
       kept-old-versions 2
       version-control t)
 
-;; TODO: Do not disable autosave
-(setq auto-save-default nil)
 
+;; tramp
+(setq tramp-default-method "ssh")
+(setq tramp-auto-save-directory auto-save-location)
+(setq tramp-backup-directory-alist auto-save-location)
 
 ;; eshell
 ;; prompt
