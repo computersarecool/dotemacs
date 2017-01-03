@@ -62,7 +62,7 @@
 
 
 ;; TODO: Check that this works
-(setq auto-save-location "~/.emacs.d/.saves/")
+(defvar auto-save-location "~/.emacs.d/.saves/")
 
 ;; change location of backups
 (setq backup-directory-alist
