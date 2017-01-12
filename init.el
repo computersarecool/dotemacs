@@ -168,8 +168,7 @@
 
 
 ;; javascript things
-(add-to-list 'auto-mode-alist '("\\.js" . js2-mode))
-(setq-default js2-basic-offset 2)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (setq js2-indent-switch-body t)
 (setq js2-mode-show-parse-errors nil)
 (setq js2-mode-show-strict-warnings nil)
@@ -180,7 +179,7 @@
 
 
 ;; json mode
-(add-to-list 'auto-mode-alist '("\\.json" . json-mode))
+(add-to-list 'auto-mode-alist '("\\.json\\'" . json-mode))
 
 
 ;; tern mode
@@ -250,7 +249,11 @@
  '(rainbow-delimiters-depth-1-face ((t (:foreground "brightred"))))
  '(region ((t (:background "color-33" :foreground "color-251"))))
  '(show-paren-match ((t (:background "green" :foreground "#000000"))))
- '(tooltip ((t (:inherit variable-pitch :background "cyan" :foreground "black")))))
+ '(tooltip ((t (:inherit variable-pitch :background "cyan" :foreground "black"))))
+ '(whitespace-empty ((t (:background "brightblack" :foreground "#ff0000"))))
+ '(whitespace-hspace ((t (:background "#000000" :foreground "color-235"))))
+ '(whitespace-indentation ((t (:background "color-234" :foreground "#ff0000"))))
+ '(whitespace-space ((t (:background "#000000" :foreground "color-232")))))
 
 
 ;; set the global cosmetics
@@ -268,11 +271,14 @@
 (add-hook 'find-file-hook 'linum-mode)
 (add-hook 'find-file-hook 'ac-emoji-setup)
 
+
 ;; ac-cap init
 (require 'auto-complete-config)
 (ac-config-default)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 
+
+;; whitespace mode
 
 ;; enable rainbow mode
 (add-hook 'css-mode-hook 'my-css-mode-hook)
@@ -282,8 +288,8 @@
 
 ;; entrance message
 (add-hook 'after-init-hook
-	  (lambda ()
-	    (message "Welcome home %s" (user-login-name))))
+         (lambda ()
+           (message "Welcome home %s" (user-login-name))))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -302,4 +308,5 @@
  '(show-paren-mode t)
  '(smtpmail-smtp-server "smtp.gmail.com")
  '(smtpmail-smtp-service 25)
- '(tool-bar-mode nil))
+ '(tool-bar-mode nil)
+ '(whitespace-display-mappings (quote ((space-mark 32 [183]) (tab-mark 9 [187 9])))))
