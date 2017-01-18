@@ -3,14 +3,12 @@ My emacs config be like........ohhhh
 
 
 ## Things to do:
- - Examine what exec-path-from-shell does in init file
- - Make logging into circe ask for a password
- - Un-disable autosave, save those file to the saves directory
- - Use Guess-style mode (133)
- - Powerline theme
- - Projectile
- - Show whitespace
- 
+ -- Figure out if exec-path from shell is needed
+
+   PICKUP
+   - Multiple cursors
+
+
 ### Explore further:
 - ido mode
 - jedi

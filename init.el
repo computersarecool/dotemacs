@@ -1,20 +1,17 @@
 ;;; Package --- summary
 
 ;;; Commentary:
-;; my Emacs initialization file
+;; My Emacs initialization file
 
 ;;; Code:
-;; make sure we are working with some modern code
-;;(setq debug-on-error t)
-;;(debug-on-entry 'yas--schedule-jit)
-
+;; Make sure we are working with some modern code
 (when (version<= emacs-version "24.0")
   (message "You are running some old-ass emacs. As in %s.%s old." emacs-major-version emacs-minor-version))
 
 
-;; all the packages used
+;; List all packages used and their repos
 (setq package-list '(
-                    exec-path-from-shell
+;;                    exec-path-from-shell
                     auto-complete
                     buffer-move
                     ac-capf
@@ -43,28 +40,23 @@
                          ("melpa" . "http://melpa.milkbox.net/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")))
 
-;; activate all packages
+;; Activate all packages
 (package-initialize)
 
-;; fetch the list of packages available
+;; Get list of packages available
 (unless package-archive-contents
   (package-refresh-contents))
 
-;; install missing packages
+;; Install missing packages
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
 
 
-;; TODO
+;; TODO: Check to see if this is neccesary
 ;; set path correctly
-(exec-path-from-shell-initialize)
-
-
-;; yasnippit (load before auto complete)
-(require 'yasnippet)
-(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
-(yas-global-mode 1)
+;;(unless (eq system-type 'windows-nt)
+;;(exec-path-from-shell-initialize))
 
 
 ;; handle back ups and auto-saves
@@ -110,19 +102,13 @@
 
 
 ;; circe
-;; TODO: Ask for a password
-(setq my-credentials-file "~/documents/safe/private.el")
-(defun my-sasl-password (_)
-  (with-temp-buffer
-    (insert-file-contents-literally my-credentials-file)
-    (plist-get (read (buffer-string)) :freenode-password)))
 (setq circe-network-options
       '(("Freenode"
          :tls t
          :nick "optonox"
          :sasl-username "optonox"
-         :sasl-password my-sasl-password
-         :channels ("#emacs"))))
+         :sasl-password (lambda (x) (read-passwd "SASL password: "))
+         )))
 
 
 ;; multiple cursors
@@ -150,10 +136,7 @@
 
 ;; butler mode
 (ws-butler-global-mode t)
-(setq require-final-newline t)
 (ws-butler-trim-eob-lines)
-
-
 
 ;; skewer mode
 (skewer-setup)
@@ -169,6 +152,7 @@
 
 ;; javascript things
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(setq js2-basic-offset 2)
 (setq js2-indent-switch-body t)
 (setq js2-mode-show-parse-errors nil)
 (setq js2-mode-show-strict-warnings nil)
@@ -205,6 +189,9 @@
 (global-flycheck-mode)
 
 
+;; c++
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+
 ;; This is what happens if you don't have a GUI version
 (unless window-system
   ;; linum-mode
@@ -225,6 +212,13 @@
 ;; general hook functions
 (add-hook 'find-file-hook 'linum-mode)
 (add-hook 'find-file-hook 'ac-emoji-setup)
+
+
+;; yasnippit (load before auto complete)
+(require 'yasnippet)
+(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+(yas-global-mode 1)
+
 
 
 ;; ac-cap init
@@ -253,10 +247,12 @@
  '(whitespace-empty ((t (:background "brightblack" :foreground "#ff0000"))))
  '(whitespace-hspace ((t (:background "#000000" :foreground "color-235"))))
  '(whitespace-indentation ((t (:background "color-234" :foreground "#ff0000"))))
+ '(whitespace-line ((t nil)))
  '(whitespace-space ((t (:background "#000000" :foreground "color-232")))))
 
 
 ;; set the global cosmetics
+(setq require-final-newline t)
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (setq display-time-day-and-date t
@@ -279,6 +275,10 @@
 
 
 ;; whitespace mode
+;; TODO Fix long line hack. The line below doesn't do anything
+;; (setq white-space-style '(face tabs empty trailing))
+;;(setq whitespace-line-column 500)
+;;(global-whitespace-mode 1)
 
 ;; enable rainbow mode
 (add-hook 'css-mode-hook 'my-css-mode-hook)
