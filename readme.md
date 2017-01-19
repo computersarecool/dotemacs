@@ -6,25 +6,29 @@ My emacs config be like........ohhhh
  -- Figure out if exec-path from shell is needed
 
    PICKUP
-   - Multiple cursors
+   - Repl toggle
 
 
 ### Explore further:
 - ido mode
 - jedi
 - tern
-- skewer mode
+- flycheck mode
+- skewer mode. Test on graphical client
 - markdown-mode
 - json-mode
 - guess style
 - multiple cursor (switch to C-c C-c?)
+- why isn't json being indented
 - yasnippet packages
 - create a "performance / party" mode
 
 
 ### Later modes to review or add:
-- repl-toggle
-- whitespace
+- Whitespace mode:
+    Currently causes an issue with autocomplete
+    Could be changed by changing the face in the popup
+    
 - ac-capf
 - irony mode
 - semantic mode
@@ -33,3 +37,4 @@ My emacs config be like........ohhhh
 - stylus (significant whitespace mode)
 - editor config
 - magit
+

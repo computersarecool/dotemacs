@@ -114,9 +114,19 @@
 ;; multiple cursors
 (require 'multiple-cursors)
 (global-set-key (kbd "C-c C-y a") 'mc/edit-lines)
-(global-set-key (kbd "C-c C-y d") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c C-y n") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c C-y p") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-y x") 'mc/mark-all-like-this)
+
+
+;; yasnippit (load before auto complete)
+(require 'yasnippet)
+(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+(yas-global-mode 1)
+
+
+;; turn off tabs
+(setq-default indent-tabs-mode nil)
 
 
 ;; autocomplete mode
@@ -125,18 +135,10 @@
 (global-auto-complete-mode t)
 
 
-;; turn off tabs
-(setq-default indent-tabs-mode nil)
-
-;; guess-style mode
-;;(autoload 'guess-style-set-variable "guess-style" nil t)
-;;(autoload 'guess-style-guess-variable "guess-style")
-;;(autoload 'guess-style-guess-all "guess-style" nil t)
-
-
 ;; butler mode
 (ws-butler-global-mode t)
 (ws-butler-trim-eob-lines)
+
 
 ;; skewer mode
 (skewer-setup)
@@ -145,9 +147,6 @@
 ;; flycheck mode
 (global-flycheck-mode)
 (setq-default flycheck-disabled-checkers '(javascript-jshint javascript-eslint))
-
-;; tern mode
-(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 
 
 ;; javascript things
@@ -164,9 +163,11 @@
 
 ;; json mode
 (add-to-list 'auto-mode-alist '("\\.json\\'" . json-mode))
+(setq json-reformat:indent-width 2)
 
 
 ;; tern mode
+(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 (eval-after-load 'tern
   '(progn
      (require 'tern-auto-complete)
@@ -181,6 +182,14 @@
 
 
 ;; python + jedi mode
+
+;; guess-style mode
+;;(autoload 'guess-style-set-variable "guess-style" nil t)
+;;(autoload 'guess-style-guess-variable "guess-style")
+;;(autoload 'guess-style-guess-all "guess-style" nil t)
+
+
+
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 
@@ -214,10 +223,6 @@
 (add-hook 'find-file-hook 'ac-emoji-setup)
 
 
-;; yasnippit (load before auto complete)
-(require 'yasnippet)
-(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
-(yas-global-mode 1)
 
 
 
