@@ -11,7 +11,7 @@
 
 ;; List all packages used and their repos
 (setq package-list '(
-;;                    exec-path-from-shell
+                    exec-path-from-shell
                     auto-complete
                     buffer-move
                     ac-capf
@@ -55,8 +55,8 @@
 
 ;; TODO: Check to see if this is neccesary
 ;; set path correctly
-;;(unless (eq system-type 'windows-nt)
-;;(exec-path-from-shell-initialize))
+(unless (eq system-type 'windows-nt)
+(exec-path-from-shell-initialize))
 
 
 ;; handle back ups and auto-saves
@@ -139,15 +139,13 @@
 (ws-butler-global-mode t)
 (ws-butler-trim-eob-lines)
 
-
-;; skewer mode
-(skewer-setup)
-
-
 ;; flycheck mode
 (global-flycheck-mode)
 (setq-default flycheck-disabled-checkers '(javascript-jshint javascript-eslint))
 
+
+;; skewer mode
+(skewer-setup)
 
 ;; javascript things
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
@@ -158,6 +156,10 @@
 (add-hook 'js2-mode-hook
           (lambda ()
             (setq mode-name "Zono-mode")
+            (define-key js2-mode-map (kbd "C-x C-g") 'nodejs-repl-send-last-sexp)
+            (define-key js2-mode-map (kbd "C-c C-t") 'nodejs-repl-send-region)
+            (define-key js2-mode-map (kbd "C-c C-l") 'nodejs-repl-load-file)
+            (define-key js2-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)
             (tern-mode t)))
 
 
@@ -174,12 +176,15 @@
      (tern-ac-setup)))
 
 
+
+;; nodejs repl
+(require 'nodejs-repl)
+
 ;; repl-toggle
 ;; key shortcuts- are C-u (1 - 3 times) followed by C-c C-z
 ;; (setq rtog/fullscreen t)
 ;; (require 'repl-toggle)
 ;; (setq rtog/mode-repl-alist '((js2-mode . nodejs-repl)))
-
 
 ;; python + jedi mode
 
@@ -190,8 +195,8 @@
 
 
 
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
+;;(add-hook 'python-mode-hook 'jedi:setup)
+;;(setq jedi:complete-on-dot t)
 
 
 ;; flycheck mode

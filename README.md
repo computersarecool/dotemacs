@@ -4,10 +4,12 @@ My emacs config be like........ohhhh
 
 ## Things to do:
  -- Figure out if exec-path from shell is needed
+ -- It is needed because the $PATH variable in emacs / ansi term is much more basic than our real paths
 
+   
    PICKUP
-   - Repl toggle
-
+   - 🐌  Set keybindings for repl toggle and experiment with skewer
+   
 
 ### Explore further:
 - ido mode
