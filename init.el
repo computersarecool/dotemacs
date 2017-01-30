@@ -29,6 +29,7 @@
                     js2-mode
                     json-mode
                     skewer-mode
+                    repl-toggle
                     markdown-mode
                     glsl-mode
                     rainbow-mode
@@ -53,7 +54,6 @@
     (package-install package)))
 
 
-;; TODO: Check to see if this is neccesary
 ;; set path correctly
 (unless (eq system-type 'windows-nt)
 (exec-path-from-shell-initialize))
@@ -88,11 +88,6 @@
     (propertize (eshell/pwd) 'face `(:foreground "yellow"))
     (propertize " $ " 'face `(:foreground "white")))))
 (setq eshell-highlight-prompt nil)
-
-;; clear it
-(defun eshell/clear ()
-  (let ((inhibit-read-only t))
-    (erase-buffer)))
 
 
 ;; neotree
@@ -139,13 +134,19 @@
 (ws-butler-global-mode t)
 (ws-butler-trim-eob-lines)
 
+
 ;; flycheck mode
 (global-flycheck-mode)
 (setq-default flycheck-disabled-checkers '(javascript-jshint javascript-eslint))
 
 
+;; flycheck mode
+(global-flycheck-mode)
+
+
 ;; skewer mode
 (skewer-setup)
+
 
 ;; javascript things
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
@@ -156,7 +157,7 @@
 (add-hook 'js2-mode-hook
           (lambda ()
             (setq mode-name "Zono-mode")
-            (define-key js2-mode-map (kbd "C-x C-g") 'nodejs-repl-send-last-sexp)
+            (define-key js2-mode-map (kbd "C-c C-g") 'nodejs-repl-send-last-sexp)
             (define-key js2-mode-map (kbd "C-c C-t") 'nodejs-repl-send-region)
             (define-key js2-mode-map (kbd "C-c C-l") 'nodejs-repl-load-file)
             (define-key js2-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)
@@ -176,37 +177,38 @@
      (tern-ac-setup)))
 
 
-
 ;; nodejs repl
 (require 'nodejs-repl)
 
+
 ;; repl-toggle
-;; key shortcuts- are C-u (1 - 3 times) followed by C-c C-z
-;; (setq rtog/fullscreen t)
-;; (require 'repl-toggle)
-;; (setq rtog/mode-repl-alist '((js2-mode . nodejs-repl)))
+;; shortcuts to sent content to REPL are C-u (1 - 3 times) followed by C-c C-z
+(setq rtog/fullscreen t)
+(require 'repl-toggle)
+(setq rtog/mode-repl-alist '((js2-mode . nodejs-repl)))
+
 
 ;; python + jedi mode
-
-;; guess-style mode
-;;(autoload 'guess-style-set-variable "guess-style" nil t)
-;;(autoload 'guess-style-guess-variable "guess-style")
-;;(autoload 'guess-style-guess-all "guess-style" nil t)
-
+(setq jedi:environment-root "jedi")
+(setq jedi:environment-virtualenv
+      (append python-environment-virtualenv
+                            '("--python" "/usr/bin/python3")))
 
 
 ;;(add-hook 'python-mode-hook 'jedi:setup)
 ;;(setq jedi:complete-on-dot t)
 
 
-;; flycheck mode
-(global-flycheck-mode)
+;; enable rainbow mode
+(add-hook 'css-mode-hook 'my-css-mode-hook)
+(defun my-css-mode-hook ()
+  (rainbow-mode t))
 
 
 ;; c++
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
-;; This is what happens if you don't have a GUI version
+;; these are things that happen if you do not have a GUI version
 (unless window-system
   ;; linum-mode
   (defun linum-format-func (line)
@@ -221,14 +223,6 @@
                                             (count-lines (point-min) (point-max))))))
                             (concat "%" (number-to-string w) "d")))))
   (setq linum-format 'linum-format-func))
-
-
-;; general hook functions
-(add-hook 'find-file-hook 'linum-mode)
-(add-hook 'find-file-hook 'ac-emoji-setup)
-
-
-
 
 
 ;; ac-cap init
@@ -270,30 +264,11 @@
 (display-time)
 (show-paren-mode t)
 (electric-pair-mode t)
-(setq column-numver-mode t)
-(setq require-final-newline t)
+(setq column-number-mode t)
 (load-theme 'cyberpunk t)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'find-file-hook 'linum-mode)
 (add-hook 'find-file-hook 'ac-emoji-setup)
-
-
-;; ac-cap init
-(require 'auto-complete-config)
-(ac-config-default)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-
-
-;; whitespace mode
-;; TODO Fix long line hack. The line below doesn't do anything
-;; (setq white-space-style '(face tabs empty trailing))
-;;(setq whitespace-line-column 500)
-;;(global-whitespace-mode 1)
-
-;; enable rainbow mode
-(add-hook 'css-mode-hook 'my-css-mode-hook)
-(defun my-css-mode-hook ()
-  (rainbow-mode t))
 
 
 ;; entrance message

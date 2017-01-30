@@ -2,35 +2,32 @@
 My emacs config be like........ohhhh
 
 
-## Things to do:
- -- Figure out if exec-path from shell is needed
- -- It is needed because the $PATH variable in emacs / ansi term is much more basic than our real paths
+## Notes
+    nodejs-repl
+      - To send content to nodejs-repl C-u (1 - 3 times) followed by C-c C-z
 
-   
-   PICKUP
-   - 🐌  Set keybindings for repl toggle and experiment with skewer
-   
+    skewer-mode
+      - M-x run-skewer to attach to a browser
+      - C-c C-z to open the REPL
+      - Consider changing the keymap, C-M-x to evaluate an expression
+
+
+## Things to do:
+ -- Make more snippets
+
 
 ### Explore further:
 - ido mode
 - jedi
 - tern
 - flycheck mode
-- skewer mode. Test on graphical client
 - markdown-mode
 - json-mode
+- mail
 - guess style
-- multiple cursor (switch to C-c C-c?)
-- why isn't json being indented
+- why isn't json being indented by two spaces
 - yasnippet packages
 - create a "performance / party" mode
-
-
-### Later modes to review or add:
-- Whitespace mode:
-    Currently causes an issue with autocomplete
-    Could be changed by changing the face in the popup
-    
 - ac-capf
 - irony mode
 - semantic mode
@@ -40,3 +37,7 @@ My emacs config be like........ohhhh
 - editor config
 - magit
 
+
+### Later modes to review or add:
+- Whitespace mode:
+    Currently causes an issue with autocomplete (Could be changed by changing the face in the popup)
