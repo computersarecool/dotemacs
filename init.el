@@ -189,10 +189,11 @@
 
 
 ;; python + jedi mode
-(setq jedi:environment-root "jedi")
-(setq jedi:environment-virtualenv
+(unless (eq system-type 'windows-nt)
+  (setq jedi:environment-root "jedi")
+  (setq jedi:environment-virtualenv
       (append python-environment-virtualenv
-                            '("--python" "/usr/bin/python3")))
+                            '("--python" "/usr/bin/python3"))))
 
 
 ;;(add-hook 'python-mode-hook 'jedi:setup)
@@ -286,6 +287,9 @@
  '(custom-safe-themes
    (quote
     ("38e64ea9b3a5e512ae9547063ee491c20bd717fe59d9c12219a0b1050b439cdd" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
+ '(grep-find-ignored-directories
+   (quote
+    ("SCCS" "RCS" "CVS" "MCVS" ".svn" ".git" ".hg" ".bzr" "_MTN" "_darcs" "{arch}" "node_modules" "bower_components")))
  '(package-selected-packages
    (quote
     (editorconfig auto-complete cyberpunk-theme simple-httpd json-mode nodejs-repl repl-toggle tern-auto-complete tern yasnippet multiple-cursors neotree)))
