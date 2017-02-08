@@ -13,7 +13,8 @@ eshell/*
 !eshell/alias
 
 # Auto-saving folders
-.saves
+.saves/*
+!.saves/.gitkeep
 auto-save-list
 
 # Files created by using extensions
