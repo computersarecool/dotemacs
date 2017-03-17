@@ -236,24 +236,6 @@
 
 
 ;; styling
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 102 :width normal))))
- '(js2-function-param ((t (:foreground "green"))))
- '(rainbow-delimiters-depth-1-face ((t (:foreground "brightred"))))
- '(region ((t (:background "color-33" :foreground "color-251"))))
- '(show-paren-match ((t (:background "green" :foreground "#000000"))))
- '(tooltip ((t (:inherit variable-pitch :background "cyan" :foreground "black"))))
- '(whitespace-empty ((t (:background "brightblack" :foreground "#ff0000"))))
- '(whitespace-hspace ((t (:background "#000000" :foreground "color-235"))))
- '(whitespace-indentation ((t (:background "color-234" :foreground "#ff0000"))))
- '(whitespace-line ((t nil)))
- '(whitespace-space ((t (:background "#000000" :foreground "color-232")))))
-
-
 ;; set the global cosmetics
 (setq require-final-newline t)
 (menu-bar-mode 0)
@@ -274,6 +256,23 @@
 (add-hook 'after-init-hook
          (lambda ()
            (message "Welcome home %s" (user-login-name))))
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 102 :width normal))))
+ '(js2-function-param ((t (:foreground "green"))))
+ '(rainbow-delimiters-depth-1-face ((t (:foreground "brightred"))))
+ '(region ((t (:background "color-33" :foreground "color-251"))))
+ '(show-paren-match ((t (:background "green" :foreground "#000000"))))
+ '(tooltip ((t (:inherit variable-pitch :background "cyan" :foreground "black"))))
+ '(whitespace-empty ((t (:background "brightblack" :foreground "#ff0000"))))
+ '(whitespace-hspace ((t (:background "#000000" :foreground "color-235"))))
+ '(whitespace-indentation ((t (:background "color-234" :foreground "#ff0000"))))
+ '(whitespace-line ((t nil)))
+ '(whitespace-space ((t (:background "#000000" :foreground "color-232")))))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
