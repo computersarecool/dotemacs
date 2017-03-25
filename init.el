@@ -192,10 +192,7 @@
 (add-hook 'python-mode-hook 'jedi:setup)
 (unless (eq system-type 'windows-nt)
   (setq py-python-command "/usr/bin/python3")
-  (setq jedi:environment-root "jedi")
-  (setq jedi:environment-virtualenv
-      (append python-environment-virtualenv
-                            '("--python" "/usr/bin/python3"))))
+  (setq jedi:environment-root "jedi"))
 
 
 ;; enable rainbow mode
