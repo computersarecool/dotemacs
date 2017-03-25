@@ -1,22 +1,22 @@
-# My emacs config
-My emacs config be like........ohhhh
+# My Emacs configugration
+> It's awesome
 
 
-## Notes
+#### Selective Mode Usage Notes
     nodejs-repl
       - To send content to nodejs-repl C-u (1 - 3 times) followed by C-c C-z
 
     skewer-mode
       - M-x run-skewer to attach to a browser
       - C-c C-z to open the REPL
-      - Consider changing the keymap, C-M-x to evaluate an expression
+      - C-M-x to evaluate an expression
 
 
-## Things to do:
+### Things to do:
  -- Make more snippets
+ -- Explore more modes
 
-
-### Explore further:
+#### Modes to explore further:
 - ido mode
 - jedi
 - tern
@@ -38,6 +38,10 @@ My emacs config be like........ohhhh
 - magit
 
 
-### Later modes to review or add:
+### Modes to add later:
 - Whitespace mode:
-    Currently causes an issue with autocomplete (Could be changed by changing the face in the popup)
+    (This currently causes an issue with autocomplete which could be changed by changing the face in the popup)
+
+### License
+:copyright: Willy Nolan 2017 
+[MIT](http://en.wikipedia.org/wiki/MIT_License)
