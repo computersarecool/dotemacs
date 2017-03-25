@@ -13,8 +13,8 @@
 
 
 ### Things to do:
- -- Make more snippets
- -- Explore more modes
+ - Make more snippets
+ - Explore more modes
 
 #### Modes to explore further:
 - ido mode
