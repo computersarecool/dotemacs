@@ -17,21 +17,19 @@
  - Explore more modes
 
 #### Modes to explore further:
-- ido mode
+- ido
 - jedi
 - tern
-- flycheck mode
+- flycheck
 - markdown-mode
 - json-mode
 - mail
 - guess style
-- why isn't json being indented by two spaces
-- yasnippet packages
-- create a "performance / party" mode
+- yasnippet
 - ac-capf
-- irony mode
-- semantic mode
-- global-ede mode
+- irony
+- semantic
+- global-ede
 - CEDET
 - stylus (significant whitespace mode)
 - editor config
