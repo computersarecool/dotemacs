@@ -19,19 +19,19 @@ These are the files that I use to configure Emacs.  This README also serves as a
 
 #### Modes to explore further:
 - ido
-- jedi
-- tern
-- flycheck
-- markdown-mode
-- json-mode
-- mail
-- guess style
-- yasnippet
-- ac-capf
 - irony
 - semantic
 - global-ede
 - CEDET
+- ac-capf
+- mail
+- yasnippet
+- flycheck
+- tern
+- jedi
+- guess style
+- markdown-mode
+- json-mode
 - stylus (significant whitespace mode)
 - editor config
 - magit
