@@ -1,4 +1,4 @@
-# My Emacs configugration
+# My Emacs configuration
 > It's awesome
 
 
