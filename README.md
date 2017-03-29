@@ -18,7 +18,6 @@ These are the files that I use to configure Emacs.  This README also serves as a
  - Explore more modes
 
 #### Modes to explore further:
-- ido
 - irony
 - semantic
 - global-ede
