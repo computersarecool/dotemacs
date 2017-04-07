@@ -36,7 +36,7 @@ These are the files that I use to configure Emacs.  This README also serves as a
 - magit
 
 
-### Modes to add later:
+#### Modes to add later:
 - Whitespace mode:
     (This currently causes an issue with autocomplete which could be changed by changing the face in the popup)
 
