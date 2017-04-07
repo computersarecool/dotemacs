@@ -3,7 +3,7 @@
 
 These are the files that I use to configure Emacs.  This README also serves as a place for me to list the modes that I am planning to explore more in the future.
 
-#### Selective Mode Usage Notes
+#### Selective Mode Usage Notes:
     nodejs-repl
       - To send content to nodejs-repl C-u (1 - 3 times) followed by C-c C-z
 
@@ -13,7 +13,7 @@ These are the files that I use to configure Emacs.  This README also serves as a
       - C-M-x to evaluate an expression
 
 
-### Things to do:
+#### Things to do:
  - Make more snippets
  - Explore more modes
 
