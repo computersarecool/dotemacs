@@ -12,6 +12,7 @@
 ;; List all packages used and their repos
 (setq package-list '(
                     exec-path-from-shell
+                    magit
                     auto-complete
                     buffer-move
                     ac-capf
@@ -61,6 +62,9 @@
   (exec-path-from-shell-copy-env "MONGO_PATH")    
  (exec-path-from-shell-initialize))
 
+
+;; magit
+(global-set-key (kbd "C-x g") 'magit-status)
 
 ;; handle back ups and auto-saves
 (defvar auto-save-location "~/.emacs.d/.saves/")
