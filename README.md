@@ -36,10 +36,11 @@ These are the files that I use to configure Emacs.  This README also serves as a
 - mail
 - editor config
 
-#### Modes to add later (tried but didn't like):
+#### Modes to add later:
 - Whitespace mode:
     (This currently causes an issue with autocomplete which could be changed by changing the face in the popup)
-- magit
+- magit:
+  (Unclear if this should be done from within emacs, caused issues with vertical frame splitting)
 
 ### License
 :copyright: Willy Nolan 2017 
