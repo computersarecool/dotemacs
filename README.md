@@ -25,22 +25,21 @@ These are the files that I use to configure Emacs.  This README also serves as a
 - global-ede
 - CEDET
 - ac-capf
-- mail
 - yasnippet
 - flycheck
 - tern
 - jedi
-- guess style
+- guess-style
 - markdown-mode
 - json-mode
 - stylus (significant whitespace mode)
+- mail
 - editor config
-- magit
 
-
-#### Modes to add later:
+#### Modes to add later (tried but didn't like):
 - Whitespace mode:
     (This currently causes an issue with autocomplete which could be changed by changing the face in the popup)
+- magit
 
 ### License
 :copyright: Willy Nolan 2017 
