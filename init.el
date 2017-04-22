@@ -58,7 +58,7 @@
 (unless (eq system-type 'windows-nt)
   (exec-path-from-shell-copy-env "EDITOR")
   (exec-path-from-shell-copy-env "VISUAL")
-  (exec-path-from-shell-copy-env "MONGO_PATH")    
+  (exec-path-from-shell-copy-env "MONGO_PATH")
  (exec-path-from-shell-initialize))
 
 
@@ -166,8 +166,6 @@
 
 ;; butler mode
 (ws-butler-global-mode t)
-(ws-butler-trim-eob-lines)
-
 
 ;; flycheck mode
 (global-flycheck-mode)
