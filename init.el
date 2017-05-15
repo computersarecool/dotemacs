@@ -307,7 +307,7 @@
  '(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 102 :width normal))))
  '(js2-function-param ((t (:foreground "green"))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "brightred"))))
- '(region ((t (:background "color-33" :foreground "color-251"))))
+ '(region ((t (:background "SystemHilight" :box (:line-width 2 :color "grey75" :style released-button) :slant oblique))))
  '(show-paren-match ((t (:background "green" :foreground "#000000"))))
  '(tooltip ((t (:inherit variable-pitch :background "cyan" :foreground "black"))))
  '(whitespace-empty ((t (:background "brightblack" :foreground "#ff0000"))))
