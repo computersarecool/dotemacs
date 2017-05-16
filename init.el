@@ -1,7 +1,7 @@
-;;; Package --- summary
+;;; Package --- My Emacs intialization file
 
 ;;; Commentary:
-;; My Emacs initialization file
+;; Tested on Windows GUI and Linux
 
 ;;; Code:
 ;; Make sure we are working with some modern code
@@ -55,7 +55,7 @@
     (package-install package)))
 
 
-;; set path correctly
+;; Set paths correctly
 (unless (eq system-type 'windows-nt)
   (exec-path-from-shell-copy-env "EDITOR")
   (exec-path-from-shell-copy-env "VISUAL")
@@ -276,8 +276,10 @@
 (setq wdired-allow-to-change-permissions t)
 (setq wdired-confirm-overwrite t)
 
+;; Styling
 ;; Change cursor blink color
-(defvar blink-cursor-colors (list "#0090E5" "#2493E8" "#4896eb" "#6d9aef" "#919df2" "b6a1f6" "daa4f9" "#ffa8fd")
+(setq blink-cursor-blinks 0)
+(defvar blink-cursor-colors (list "#0090E5" "#2493E8" "#4896eb" "#6d9aef" "#919df2" "#b6a1f6" "#daa4f9" "#ffa8fd")
 "On each blink the cursor will cycle to the next color in this list.")
 
 (setq blink-cursor-count 0)
@@ -294,16 +296,18 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
     )
   (internal-show-cursor nil (not (internal-show-cursor-p))))
 
-;; styling
-;; set the global cosmetics
+
+;; Set the global cosmetics
 (setq require-final-newline t)
 (menu-bar-mode 0)
+(scroll-bar-mode 0)
 (tool-bar-mode 0)
 (setq display-time-day-and-date t
       display-time-24hr-format t)
 (display-time)
 (show-paren-mode t)
 (electric-pair-mode t)
+(global-hi-lock-mode t)
 (setq column-number-mode t)
 (load-theme 'cyberpunk t)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
@@ -323,11 +327,11 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 102 :width normal))))
  '(js2-function-param ((t (:foreground "green"))))
- '(rainbow-delimiters-depth-1-face ((t (:foreground "brightred"))))
+ '(rainbow-delimiters-depth-1-face ((t (:foreground "#ff0000"))))
  '(region ((t (:background "SystemHilight" :box (:line-width 2 :color "grey75" :style released-button) :slant oblique))))
- '(show-paren-match ((t (:background "green" :foreground "#000000"))))
+ '(show-paren-match ((t (:background "#00ff00" :foreground "#000000"))))
  '(tooltip ((t (:inherit variable-pitch :background "cyan" :foreground "black"))))
- '(whitespace-empty ((t (:background "brightblack" :foreground "#ff0000"))))
+ '(whitespace-empty ((t (:background "#000000" :foreground "#ff0000"))))
  '(whitespace-hspace ((t (:background "#000000" :foreground "color-235"))))
  '(whitespace-indentation ((t (:background "color-234" :foreground "#ff0000"))))
  '(whitespace-line ((t nil)))
