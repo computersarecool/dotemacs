@@ -32,6 +32,7 @@
                     skewer-mode
                     repl-toggle
                     markdown-mode
+                    dtrt-indent
                     glsl-mode
                     rainbow-mode
                     rainbow-delimiters
@@ -151,9 +152,9 @@
 (yas-global-mode 1)
 
 
-;; turn off tabs
+;; turn off tabs but turn on dtrt checking of tabs
 (setq-default indent-tabs-mode nil)
-
+(setq dtrt-indent-mode t)
 
 ;; ido mode
 (setq ido-enable-flex-matching t)
@@ -297,10 +298,14 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
   (internal-show-cursor nil (not (internal-show-cursor-p))))
 
 
-;; Set the global cosmetics
+;; Set the global styles
 (when (member "DejaVu Sans Mono" (font-family-list))
   (set-face-attribute 'default nil :font "DejaVu Sans Mono"))
 
+(set-language-environment "UTF-8")
+(set-default-coding-systems 'utf-8)
+
+(setq visible-bell t)
 (setq require-final-newline t)
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
@@ -328,6 +333,7 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :background "#000000" :foreground "#d3d3d3" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 88 :width normal :foundry "outline" :family "DejaVu Sans Mono"))))
  '(js2-function-param ((t (:foreground "#00ff00"))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#ff0000"))))
  '(region ((t (:background "SystemHilight" :box (:line-width 2 :color "grey75" :style released-button) :slant oblique))))
@@ -355,7 +361,7 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
     ("SCCS" "RCS" "CVS" "MCVS" ".svn" ".git" ".hg" ".bzr" "_MTN" "_darcs" "{arch}" "node_modules" "bower_components")))
  '(package-selected-packages
    (quote
-    (editorconfig auto-complete cyberpunk-theme simple-httpd json-mode nodejs-repl repl-toggle tern-auto-complete tern yasnippet multiple-cursors neotree)))
+    (dtrt-indent editorconfig auto-complete cyberpunk-theme simple-httpd json-mode nodejs-repl repl-toggle tern-auto-complete tern yasnippet multiple-cursors neotree)))
  '(send-mail-function (quote smtpmail-send-it))
  '(show-paren-mode t)
  '(smtpmail-smtp-server "smtp.gmail.com")
