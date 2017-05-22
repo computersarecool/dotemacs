@@ -1,7 +1,7 @@
 ;;; Package --- My Emacs intialization file
 
 ;;; Commentary:
-;; Tested on Windows GUI and Linux
+;; Tested on Windows and Linux
 
 ;;; Code:
 ;; Make sure we are working with some modern code
@@ -56,7 +56,7 @@
     (package-install package)))
 
 
-;; Set paths correctly
+;; Set paths correctly on Linux
 (unless (eq system-type 'windows-nt)
   (exec-path-from-shell-copy-env "EDITOR")
   (exec-path-from-shell-copy-env "VISUAL")
@@ -64,7 +64,7 @@
  (exec-path-from-shell-initialize))
 
 
-;; handle back ups and auto-saves
+;; Back ups and auto-saves
 (defvar auto-save-location "~/.emacs.d/.saves/")
 
 (setq backup-directory-alist
@@ -78,9 +78,9 @@
       version-control t)
 
 
-;; tramp
+;; Tramp
 (setq tramp-default-method "ssh")
-;; do not save backups of files saved as su or sudo
+;; Do not save backups of files saved as su or sudo
 (setq backup-enable-predicate
       (lambda (name)
         (and (normal-backup-enable-predicate name)
@@ -89,8 +89,8 @@
                 (when (stringp method)
                                     (member method '("su" "sudo"))))))))
 
-;; ansi-term
-;; kill on exit
+;; Ansi-term
+;; Kill buffer on exit
 (defadvice term-sentinel (around my-advice-term-sentinel (proc msg))
   (if (memq (process-status proc) '(signal exit))
       (let ((buffer (process-buffer proc)))
@@ -99,19 +99,19 @@
     ad-do-it))
 (ad-activate 'term-sentinel)
 
-;; always use bash
+;; Use bash
 (defvar my-term-shell "/bin/bash")
 (defadvice ansi-term (before force-bash)
   (interactive (list my-term-shell)))
 (ad-activate 'ansi-term)
 
-;; use utf-9
+;; Use utf-8
 (defun my-term-use-utf8 ()
   (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))
 (add-hook 'term-exec-hook 'my-term-use-utf8)
 
-;; eshell
-;; prompt
+;; Eshell
+;; Prompt
 (setq eshell-prompt-function (lambda nil
    (concat
     (propertize (user-login-name) 'face `(:foreground "color-87"))
@@ -122,13 +122,13 @@
 (setq eshell-highlight-prompt nil)
 
 
-;; neotree
+;; Neotree
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 (global-set-key (kbd "M-n n") 'neotree)
 
 
-;; circe
+;; Circe
 (setq circe-network-options
       '(("Freenode"
          :tls t

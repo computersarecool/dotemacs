@@ -16,6 +16,7 @@ These are the files that I use to configure Emacs.  This README also serves as a
 
 
 #### Things to do:
+ - python-mode, jedi:(show-doc, complete and goto-definition)
  - Make more snippets
  - Check to see if we can install `yasnippet` without all the extra snippets that come with it
  - Explore more modes
