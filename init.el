@@ -111,7 +111,7 @@
 (add-hook 'term-exec-hook 'my-term-use-utf8)
 
 ;; Eshell
-;; Prompt
+;; Style prompt
 (setq eshell-prompt-function (lambda nil
    (concat
     (propertize (user-login-name) 'face `(:foreground "color-87"))
