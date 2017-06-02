@@ -64,7 +64,7 @@
  (exec-path-from-shell-initialize))
 
 
-;; Back ups and auto-saves
+;; Backup and autosave files
 (defvar auto-save-location "~/.emacs.d/.saves/")
 
 (setq backup-directory-alist
@@ -105,7 +105,7 @@
   (interactive (list my-term-shell)))
 (ad-activate 'ansi-term)
 
-;; Use utf-8
+;; Use UTF-8
 (defun my-term-use-utf8 ()
   (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))
 (add-hook 'term-exec-hook 'my-term-use-utf8)
