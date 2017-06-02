@@ -137,6 +137,8 @@
          :sasl-password (lambda (x) (read-passwd "SASL password: "))
          )))
 
+;; WindMove
+(windmove-default-keybindings)
 
 ;; multiple cursors
 (require 'multiple-cursors)
