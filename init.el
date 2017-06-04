@@ -4,12 +4,13 @@
 ;; Tested on Windows and Linux
 
 ;;; Code:
+
 ;; Make sure we are working with some modern code
 (when (version<= emacs-version "24.0")
   (message "You are running some old-ass emacs. As in %s.%s old." emacs-major-version emacs-minor-version))
 
 
-;; List all packages used and their repos
+;; List all packages and repos used
 (setq package-list '(
                     exec-path-from-shell
                     auto-complete
@@ -43,7 +44,7 @@
                          ("melpa" . "http://melpa.milkbox.net/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")))
 
-;; Activate all packages
+;; Load installed packages
 (package-initialize)
 
 ;; Get list of packages available
@@ -56,7 +57,7 @@
     (package-install package)))
 
 
-;; Set paths correctly on Linux
+;; Linux: Set paths correctly
 (unless (eq system-type 'windows-nt)
   (exec-path-from-shell-copy-env "EDITOR")
   (exec-path-from-shell-copy-env "VISUAL")
@@ -89,7 +90,7 @@
                 (when (stringp method)
                                     (member method '("su" "sudo"))))))))
 
-;; Ansi-term
+;; ANSI-Term
 ;; Kill buffer on exit
 (defadvice term-sentinel (around my-advice-term-sentinel (proc msg))
   (if (memq (process-status proc) '(signal exit))
@@ -99,7 +100,7 @@
     ad-do-it))
 (ad-activate 'term-sentinel)
 
-;; Use bash
+;; Use Bash
 (defvar my-term-shell "/bin/bash")
 (defadvice ansi-term (before force-bash)
   (interactive (list my-term-shell)))
@@ -126,6 +127,7 @@
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 (global-set-key (kbd "M-n n") 'neotree)
+(setq neo-smart-open t)
 
 
 ;; Circe
@@ -140,7 +142,7 @@
 ;; WindMove
 (windmove-default-keybindings)
 
-;; multiple cursors
+;; Multiple cursors
 (require 'multiple-cursors)
 (global-set-key (kbd "C-c C-y a") 'mc/edit-lines)
 (global-set-key (kbd "C-c C-y n") 'mc/mark-next-like-this)
@@ -152,6 +154,7 @@
 (require 'yasnippet)
 (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
 (yas-global-mode 1)
+
 
 
 ;; turn off tabs but turn on dtrt checking of tabs
@@ -259,7 +262,7 @@
     (concat
      (propertize (format linum-format-fmt line) 'face 'linum)
      (propertize " " 'face 'mode-line)))
-  
+
   (add-hook 'linum-before-numbering-hook
             (lambda ()
               (setq-local linum-format-fmt

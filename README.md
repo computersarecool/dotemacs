@@ -5,15 +5,25 @@
 
 These are the files that I use to configure Emacs.  This README also serves as a place for me to list the modes that I am planning to explore more in the future
 
-#### Mode Usage Notes:
-    nodejs-repl
-      - To send content to nodejs-repl C-u (1 - 3 times) followed by C-c C-z
+# Mode Usage Notes:
+### neotree
+  - `H` Toggle hidden file names
+  - `A` Maximize / minimize neotree
+  - `C-c C-c` Change root
+  - `C-c C-p` Copy a file or directory
 
-    skewer-mode
-      - M-x run-skewer to attach to a browser
-      - C-c C-z to open the REPL
-      - C-M-x to evaluate an expression
+### multiple-cursors
+  - `C-'` Toggle showing only lines with cursor
+  - `mc/insert-numbers` Insert increasing numbers for each cursor
+  - `C-'` Toggle showing only lines with cursor
+  - 
+### nodejs-repl
+  - To send content to nodejs-repl C-u (1 - 3 times) followed by C-c C-z
 
+### skewer-mode
+  - M-x run-skewer to attach to a browser
+  - C-c C-z to open the REPL
+  - C-M-x to evaluate an expression
 
 #### Things to do:
  - Confirm that files are not saved when using `sudo` and `tramp`
@@ -23,6 +33,8 @@ These are the files that I use to configure Emacs.  This README also serves as a
  - Explore more modes
 
 #### Modes to explore further:
+- expand-region-
+- abbrev
 - irony
 - semantic
 - global-ede
