@@ -7,16 +7,18 @@ These are the files that I use to configure Emacs.  This README also serves as a
 
 # Mode Usage Notes:
 ### neotree
-  - `H` Toggle hidden file names
-  - `A` Maximize / minimize neotree
-  - `C-c C-c` Change root
-  - `C-c C-p` Copy a file or directory
+  - Toggle hidden file names `H` 
+  - Maximize / minimize neotree `A` 
+  - Change root `C-c C-c` 
+  -  Copy a file or directory `C-c C-p`
 
 ### multiple-cursors
-  - `C-'` Toggle showing only lines with cursor
-  - `mc/insert-numbers` Insert increasing numbers for each cursor
-  - `C-'` Toggle showing only lines with cursor
-  - 
+  - Toggle showing only lines with cursor `C-'`
+  - Insert increasing numbers for each cursor `mc/insert-numbers`
+
+### yasnippet
+  - Create a new snippet `yas-new-snippet` (`C-c C-c` to save)
+
 ### nodejs-repl
   - To send content to nodejs-repl C-u (1 - 3 times) followed by C-c C-z
 
@@ -26,6 +28,7 @@ These are the files that I use to configure Emacs.  This README also serves as a
   - C-M-x to evaluate an expression
 
 #### Things to do:
+ - Flycheck and JSON lint
  - Confirm that files are not saved when using `sudo` and `tramp`
  - python-mode, jedi:(show-doc, complete and goto-definition)
  - Make more snippets
@@ -33,7 +36,7 @@ These are the files that I use to configure Emacs.  This README also serves as a
  - Explore more modes
 
 #### Modes to explore further:
-- expand-region-
+- expand-region
 - abbrev
 - irony
 - semantic

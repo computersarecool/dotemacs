@@ -106,7 +106,7 @@
   (interactive (list my-term-shell)))
 (ad-activate 'ansi-term)
 
-;; Use UTF-8
+;; Use UTF-8 in ansi-term
 (defun my-term-use-utf8 ()
   (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))
 (add-hook 'term-exec-hook 'my-term-use-utf8)
@@ -139,8 +139,6 @@
          :sasl-password (lambda (x) (read-passwd "SASL password: "))
          )))
 
-;; WindMove
-(windmove-default-keybindings)
 
 ;; Multiple cursors
 (require 'multiple-cursors)
@@ -150,93 +148,88 @@
 (global-set-key (kbd "C-c C-y x") 'mc/mark-all-like-this)
 
 
-;; yasnippit (load before auto complete)
+;; Yasnippit
 (require 'yasnippet)
 (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
 (yas-global-mode 1)
 
 
+;; WindMove
+(windmove-default-keybindings)
 
-;; turn off tabs but turn on dtrt checking of tabs
+
+;; Turn off tabs - turn on dtrt checking of tabs
 (setq-default indent-tabs-mode nil)
 (setq dtrt-indent-mode t)
 
-;; ido mode
+;; Ido mode
 (setq ido-enable-flex-matching t)
 (ido-mode t)
 
-;; autocomplete mode
+;; Autocomplete mode
 (ac-config-default)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (global-auto-complete-mode t)
 
 
-;; butler mode
+;; WS-Butler  mode
 (ws-butler-global-mode t)
 
 
-;; flycheck mode
+;; Flycheck mode
 (global-flycheck-mode)
-(setq-default flycheck-disabled-checkers '(javascript-jshint javascript-eslint))
+(setq-default flycheck-disabled-checkers '(javascript-jshint javascript-eslint json-python-json))
 
 
-;; flycheck mode
-(global-flycheck-mode)
-
-
-;; skewer mode
-(skewer-setup)
-
-
-;; javascript things
+;; Javascript
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(setq js2-basic-offset 2)
-(setq js2-indent-switch-body t)
-(setq js2-mode-show-parse-errors nil)
-(setq js2-mode-show-strict-warnings nil)
 (add-hook 'js2-mode-hook
           (lambda ()
             (setq mode-name "Zono-mode")
+            (setq js2-basic-offset 2)
+            (setq js2-indent-switch-body t)
+
+            ;; Temporarily set because it was slowing down Emacs
+            ;; (setq js2-mode-show-parse-errors nil)
+            ;; (setq js2-mode-show-strict-warnings nil)
+
+            ;; JSDoc shortcuts
+            (define-key js2-mode-map "\C-ci" 'js-doc-insert-function-doc)
+            (define-key js2-mode-map "@" 'js-doc-insert-tag)
+
+            ;; Node.js repl shortcuts
             (define-key js2-mode-map (kbd "C-c C-g") 'nodejs-repl-send-last-sexp)
             (define-key js2-mode-map (kbd "C-c C-t") 'nodejs-repl-send-region)
             (define-key js2-mode-map (kbd "C-c C-l") 'nodejs-repl-load-file)
             (define-key js2-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)
+
+            ;; Enable tern mode
             (tern-mode t)))
 
-;; js-doc
-;;(setq js-doc-mail-address ""
-;;      js-doc-author (format "your name <%s>" js-doc-mail-address)
-;;      js-doc-url "url of your website"
-;;      js-doc-license "license name")
-;;      )
 
-(add-hook 'js2-mode-hook
-          #'(lambda ()
-              (define-key js2-mode-map "\C-ci" 'js-doc-insert-function-doc)
-                             (define-key js2-mode-map "@" 'js-doc-insert-tag)))
+;; Node.js REPL
+(require 'nodejs-repl)
 
-;; json mode
-(add-to-list 'auto-mode-alist '("\\.json\\'" . json-mode))
-(setq json-reformat:indent-width 2)
+;; REPL-toggle
+(setq rtog/fullscreen t)
+(require 'repl-toggle)
+(setq rtog/mode-repl-alist '((js2-mode . nodejs-repl)))
 
 
-;; tern mode
-(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+;; Tern mode
 (eval-after-load 'tern
   '(progn
      (require 'tern-auto-complete)
      (tern-ac-setup)))
 
 
-;; nodejs repl
-(require 'nodejs-repl)
+;; JSON mode
+(add-to-list 'auto-mode-alist '("\\.json\\'" . json-mode))
+(setq json-reformat:indent-width 2)
 
 
-;; repl-toggle
-;; shortcuts to sent content to REPL are C-u (1 - 3 times) followed by C-c C-z
-(setq rtog/fullscreen t)
-(require 'repl-toggle)
-(setq rtog/mode-repl-alist '((js2-mode . nodejs-repl)))
+;; Skewer mode
+(skewer-setup)
 
 
 ;; python + jedi mode
