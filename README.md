@@ -10,7 +10,7 @@ These are the files that I use to configure Emacs.  This README also serves as a
   - Toggle hidden file names `H` 
   - Maximize / minimize neotree `A` 
   - Change root `C-c C-c` 
-  -  Copy a file or directory `C-c C-p`
+  - Copy a file or directory `C-c C-p`
 
 ### multiple-cursors
   - Toggle showing only lines with cursor `C-'`
@@ -19,16 +19,16 @@ These are the files that I use to configure Emacs.  This README also serves as a
 ### yasnippet
   - Create a new snippet `yas-new-snippet` (`C-c C-c` to save)
 
-### nodejs-repl
-  - To send content to nodejs-repl C-u (1 - 3 times) followed by C-c C-z
+### nodejs-repl / toggle-repl
+  - To send content to nodejs-repl `C-u` (1 - 3 times) followed by `C-c C-z`
 
 ### skewer-mode
-  - M-x run-skewer to attach to a browser
-  - C-c C-z to open the REPL
-  - C-M-x to evaluate an expression
+  - Open and attach a browser `M-x run-skewer`
+  - Open the REPL `C-c C-z` 
+  - Evaluate an expression `C-M-x`
 
 #### Things to do:
- - Confirm that files are not saved when using `sudo` and `tramp`
+ - Confirm that backups and autosaves are not saved when using `sudo` and `tramp`
  - Python: python-mode, jedi:(show-doc, complete and goto-definition)
  - Make more snippets
  - Check to see if we can install `yasnippet` without all the extra snippets that come with it
@@ -63,5 +63,7 @@ These are the files that I use to configure Emacs.  This README also serves as a
   (Unclear if this should be done from within emacs, caused issues with vertical frame splitting)
 
 ### License
-:copyright: Willy Nolan 2017 
-[MIT](http://en.wikipedia.org/wiki/MIT_License)
+:copyright: Willy Nolan 2017
+
+[MIT License](http://en.wikipedia.org/wiki/MIT_License)
+
