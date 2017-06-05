@@ -28,14 +28,16 @@ These are the files that I use to configure Emacs.  This README also serves as a
   - C-M-x to evaluate an expression
 
 #### Things to do:
- - Flycheck and JSON lint
  - Confirm that files are not saved when using `sudo` and `tramp`
- - python-mode, jedi:(show-doc, complete and goto-definition)
+ - Python: python-mode, jedi:(show-doc, complete and goto-definition)
  - Make more snippets
  - Check to see if we can install `yasnippet` without all the extra snippets that come with it
- - Explore more modes
 
 #### Modes to explore further:
+- Hi-loc mode
+- ac-capf
+- ac-emoji
+- markdown mode
 - expand-region
 - abbrev
 - irony

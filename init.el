@@ -15,7 +15,6 @@
                     exec-path-from-shell
                     auto-complete
                     buffer-move
-                    ac-capf
                     ac-emoji
                     nodejs-repl
                     circe
@@ -167,6 +166,7 @@
 (ido-mode t)
 
 ;; Autocomplete mode
+(require 'auto-complete-config)
 (ac-config-default)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (global-auto-complete-mode t)
@@ -232,25 +232,20 @@
 (skewer-setup)
 
 
-;; python + jedi mode
+;; Python
+;; Jedi
 (add-hook 'python-mode-hook 'jedi:setup)
 (unless (eq system-type 'windows-nt)
   (setq py-python-command "/usr/bin/python3")
   (setq jedi:environment-root "jedi"))
 
 
-;; enable rainbow mode
-(add-hook 'css-mode-hook 'my-css-mode-hook)
-(defun my-css-mode-hook ()
-  (rainbow-mode t))
-
-
-;; c++
+;; C++
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
-;; these are things that happen if you do not have a GUI version
+;; Non-GUI Things
 (unless window-system
-  ;; linum-mode
+  ;; Linum-mode special formatting
   (defun linum-format-func (line)
     (concat
      (propertize (format linum-format-fmt line) 'face 'linum)
@@ -265,19 +260,22 @@
   (setq linum-format 'linum-format-func))
 
 
-;; ac-cap init
-(require 'auto-complete-config)
-(ac-config-default)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+;; Rainbow mode
+(define-globalized-minor-mode my-global-rainbow-mode rainbow-mode
+  (lambda ()
+    (rainbow-mode 1)))
+
+(my-global-rainbow-mode 1)
 
 
-;; set wdired options
+;; Wdired
 (setq wdired-allow-to-change-permissions t)
 (setq wdired-confirm-overwrite t)
 
 ;; Styling
-;; Change cursor blink color
+;; Never stop blinking
 (setq blink-cursor-blinks 0)
+;; Cursor colors
 (defvar blink-cursor-colors (list "#0090E5" "#2493E8" "#4896eb" "#6d9aef" "#919df2" "#b6a1f6" "#daa4f9" "#ffa8fd")
 "On each blink the cursor will cycle to the next color in this list.")
 
@@ -296,7 +294,7 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
   (internal-show-cursor nil (not (internal-show-cursor-p))))
 
 
-;; Set the global styles
+;; Set font
 (when (member "DejaVu Sans Mono" (font-family-list))
   (set-face-attribute 'default nil :font "DejaVu Sans Mono"))
 
@@ -304,7 +302,6 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
 (set-default-coding-systems 'utf-8)
 
 (setq visible-bell t)
-(setq require-final-newline t)
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
 (tool-bar-mode 0)
@@ -313,15 +310,16 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
 (display-time)
 (show-paren-mode t)
 (electric-pair-mode t)
-(global-hi-lock-mode t)
 (setq column-number-mode t)
 (load-theme 'cyberpunk t)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'find-file-hook 'linum-mode)
 (add-hook 'find-file-hook 'ac-emoji-setup)
 
+(setq require-final-newline t)
+(global-hi-lock-mode t)
 
-;; entrance message
+;; Entrance message
 (add-hook 'after-init-hook
          (lambda ()
            (message "Welcome home %s" (user-login-name))))
