@@ -189,9 +189,9 @@
             (setq js2-basic-offset 2)
             (setq js2-indent-switch-body t)
 
-            ;; Temporarily set because it was slowing down Emacs
-            ;; (setq js2-mode-show-parse-errors nil)
-            ;; (setq js2-mode-show-strict-warnings nil)
+            ;; Disable js2-mode's built in error checking
+            (setq js2-mode-show-parse-errors nil)
+            (setq js2-mode-show-strict-warnings nil)
 
             ;; JSDoc shortcuts
             (define-key js2-mode-map "\C-ci" 'js-doc-insert-function-doc)
