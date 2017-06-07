@@ -112,14 +112,6 @@
 
 ;; Eshell
 ;; Style prompt
-(setq eshell-prompt-function (lambda nil
-   (concat
-    (propertize (user-login-name) 'face `(:foreground "color-87"))
-    (propertize "@" 'face `(:foreground "white"))
-    (propertize (car (split-string system-name "\\.")) 'face `(:foreground "green"))
-    (propertize (eshell/pwd) 'face `(:foreground "yellow"))
-    (propertize " $ " 'face `(:foreground "white")))))
-(setq eshell-highlight-prompt nil)
 
 
 ;; Neotree
@@ -345,7 +337,7 @@ the optional argument: force-reverting to true."
  '(default ((t (:inherit nil :stipple nil :background "#000000" :foreground "#d3d3d3" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 88 :width normal :foundry "outline" :family "DejaVu Sans Mono"))))
  '(js2-function-param ((t (:foreground "#00ff00"))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#ff0000"))))
- '(region ((t (:background "SystemHilight" :box (:line-width 2 :color "grey75" :style released-button) :slant oblique))))
+ '(region ((t (:background "#00ffff" :foreground "#ff00ff" :box (:line-width 2 :color "#ff00ff" :style released-button) :slant oblique))))
  '(show-paren-match ((t (:background "#00ff00" :foreground "#000000"))))
  '(tooltip ((t (:inherit variable-pitch :background "cyan" :foreground "#000000"))))
  '(whitespace-empty ((t (:background "#000000" :foreground "#ff0000"))))

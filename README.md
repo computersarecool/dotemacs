@@ -28,6 +28,7 @@ These are the files that I use to configure Emacs.  This README also serves as a
   - Evaluate an expression `C-M-x`
 
 #### Things to do:
+ - Style eshell prompt
  - Confirm that backups and autosaves are not saved when using `sudo` and `tramp`
  - Python: python-mode, jedi:(show-doc, complete and goto-definition)
  - Make more snippets
