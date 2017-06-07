@@ -105,7 +105,7 @@
   (interactive (list my-term-shell)))
 (ad-activate 'ansi-term)
 
-;; Use UTF-8 in ansi-term
+;; Use UTF-8 in ANSI-Term
 (defun my-term-use-utf8 ()
   (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))
 (add-hook 'term-exec-hook 'my-term-use-utf8)
@@ -318,6 +318,19 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
 
 (setq require-final-newline t)
 (global-hi-lock-mode t)
+
+
+(global-set-key (kbd "<f5>")
+  (lambda (&optional force-reverting)
+    "Interactive call to revert-buffer. Ignoring the auto-save
+file and not requesting for confirmation. When the current buffer
+is modified, the command refuses to revert it, unless you specify
+the optional argument: force-reverting to true."
+   (interactive "P")
+   (if (or force-reverting (not (buffer-modified-p)))
+     (revert-buffer :ignore-auto :noconfirm)
+     (error "The buffer has been modified"))))
+
 
 ;; Entrance message
 (add-hook 'after-init-hook
