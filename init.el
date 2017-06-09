@@ -112,6 +112,11 @@
 
 ;; Eshell
 ;; Style prompt
+(setq eshell-prompt-function (lambda nil
+   (concat
+    (propertize (eshell/pwd) 'face `(:foreground "blue"))
+    (propertize " $ " 'face `(:foreground "green")))))
+(setq eshell-highlight-prompt nil)
 
 
 ;; Neotree
