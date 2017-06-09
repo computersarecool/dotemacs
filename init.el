@@ -78,6 +78,9 @@
       version-control t)
 
 
+;; Always follow symlink files
+(setq vc-follow-symlinks t)
+
 ;; Tramp
 (setq tramp-default-method "ssh")
 ;; Do not save backups of files saved as su or sudo
@@ -111,12 +114,24 @@
 (add-hook 'term-exec-hook 'my-term-use-utf8)
 
 ;; Eshell
-;; Style prompt
-(setq eshell-prompt-function (lambda nil
-   (concat
-    (propertize (eshell/pwd) 'face `(:foreground "blue"))
-    (propertize " $ " 'face `(:foreground "green")))))
-(setq eshell-highlight-prompt nil)
+(defun my-eshell-prompt ()
+  "Highlight eshell pwd and prompt separately."
+  (mapconcat
+   (lambda (list)
+     (propertize (car list)
+                 'read-only      t
+                 'font-lock-face (cdr list)
+                 'front-sticky   '(font-lock-face read-only)
+                 'rear-nonsticky '(font-lock-face read-only)))
+   `((, user-login-name :foreground "cyan")
+     (, "@" :foreground "white")
+     (, system-name :foreground "#00bfff")
+     (,(abbreviate-file-name (eshell/pwd)) :foreground "magenta")
+     (,(if (zerop (user-uid)) " # " " $ ") :foreground "cyan"))
+   ""))
+
+(setq eshell-highlight-prompt nil
+  eshell-prompt-function  #'my-eshell-prompt)
 
 
 ;; Neotree
@@ -328,10 +343,10 @@ the optional argument: force-reverting to true."
           (message "Welcome home %s" (user-login-name))))
 
 
-;; (Hides splash screen)
-;; Set font (This hides splash screen)
-; (when (member "DejaVu Sans Mono" (font-family-list))
-;    (set-face-attribute 'default nil :font "DejaVu Sans Mono"))
+
+;; Set font (this has the side effect of hiding the splash screen)
+(when (member "DejaVu Sans Mono" (font-family-list))
+   (set-face-attribute 'default nil :font "DejaVu Sans Mono"))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
