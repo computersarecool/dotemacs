@@ -3,7 +3,7 @@
 ;;; Commentary:
 ;; Tested on Windows and Linux
 
-;;; Code:
+;; Code:
 
 ;; Make sure we are working with some modern code
 (when (version<= emacs-version "24.0")
@@ -257,14 +257,6 @@
   (setq linum-format 'linum-format-func))
 
 
-;; Rainbow mode
-(define-globalized-minor-mode my-global-rainbow-mode rainbow-mode
-  (lambda ()
-    (rainbow-mode 1)))
-
-(my-global-rainbow-mode 1)
-
-
 ;; Wdired
 (setq wdired-allow-to-change-permissions t)
 (setq wdired-confirm-overwrite t)
@@ -291,9 +283,7 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
   (internal-show-cursor nil (not (internal-show-cursor-p))))
 
 
-;; Set font
-(when (member "DejaVu Sans Mono" (font-family-list))
-  (set-face-attribute 'default nil :font "DejaVu Sans Mono"))
+
 
 (set-language-environment "UTF-8")
 (set-default-coding-systems 'utf-8)
@@ -310,6 +300,9 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
 (setq column-number-mode t)
 (load-theme 'cyberpunk t)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook
+	(lambda ()
+		(rainbow-mode 1)))
 (add-hook 'find-file-hook 'linum-mode)
 (add-hook 'find-file-hook 'ac-emoji-setup)
 
@@ -318,38 +311,38 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
 
 
 (global-set-key (kbd "<f5>")
-  (lambda (&optional force-reverting)
-    "Interactive call to revert-buffer. Ignoring the auto-save
+ (lambda (&optional force-reverting)
+   "Interactive call to revert-buffer. Ignoring the auto-save
 file and not requesting for confirmation. When the current buffer
 is modified, the command refuses to revert it, unless you specify
 the optional argument: force-reverting to true."
-   (interactive "P")
-   (if (or force-reverting (not (buffer-modified-p)))
-     (revert-buffer :ignore-auto :noconfirm)
-     (error "The buffer has been modified"))))
+  (interactive "P")
+  (if (or force-reverting (not (buffer-modified-p)))
+    (revert-buffer :ignore-auto :noconfirm)
+    (error "The buffer has been modified"))))
 
 
-;; Entrance message
+;; Entrance message 
 (add-hook 'after-init-hook
-         (lambda ()
-           (message "Welcome home %s" (user-login-name))))
+        (lambda ()
+          (message "Welcome home %s" (user-login-name))))
+
+
+;; (Hides splash screen)
+;; Set font (This hides splash screen)
+; (when (member "DejaVu Sans Mono" (font-family-list))
+;    (set-face-attribute 'default nil :font "DejaVu Sans Mono"))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#000000" :foreground "#d3d3d3" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 88 :width normal :foundry "outline" :family "DejaVu Sans Mono"))))
  '(js2-function-param ((t (:foreground "#00ff00"))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#ff0000"))))
  '(region ((t (:background "#00ffff" :foreground "#ff00ff" :box (:line-width 2 :color "#ff00ff" :style released-button) :slant oblique))))
  '(show-paren-match ((t (:background "#00ff00" :foreground "#000000"))))
- '(tooltip ((t (:inherit variable-pitch :background "cyan" :foreground "#000000"))))
- '(whitespace-empty ((t (:background "#000000" :foreground "#ff0000"))))
- '(whitespace-hspace ((t (:background "#000000" :foreground "color-235"))))
- '(whitespace-indentation ((t (:background "color-234" :foreground "#ff0000"))))
- '(whitespace-line ((t nil)))
- '(whitespace-space ((t (:background "#000000" :foreground "color-232")))))
+ '(tooltip ((t (:inherit variable-pitch :background "cyan" :foreground "#000000")))))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
