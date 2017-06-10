@@ -353,6 +353,7 @@ the optional argument: force-reverting to true."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+'(default ((t (:inherit nil :stipple nil :background "#000000" :foreground "#d3d3d3" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 88 :width normal :foundry "outline"))))
  '(js2-function-param ((t (:foreground "#00ff00"))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#ff0000"))))
  '(region ((t (:background "#00ffff" :foreground "#ff00ff" :box (:line-width 2 :color "#ff00ff" :style released-button) :slant oblique))))
