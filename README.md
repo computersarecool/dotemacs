@@ -3,32 +3,33 @@
 
 > It's awesome
 
-These are the files that I use to configure Emacs.  This README also serves as a place for me to list the modes that I am planning to explore more in the future
+These are the files that I use to configure Emacs. 
 
-# Mode Usage Notes:
-### neotree
+This README also serves as a place for me to list the modes that I am planning to explore more in the future
+
+### Mode Notes:
+#### neotree
   - Toggle hidden file names `H` 
   - Maximize / minimize neotree `A` 
   - Change root `C-c C-c` 
   - Copy a file or directory `C-c C-p`
 
-### multiple-cursors
+#### multiple-cursors
   - Toggle showing only lines with cursor `C-'`
   - Insert increasing numbers for each cursor `mc/insert-numbers`
 
-### yasnippet
+#### serveryasnippet
   - Create a new snippet `yas-new-snippet` (`C-c C-c` to save)
 
-### nodejs-repl / toggle-repl
+#### nodejs-repl / toggle-repl
   - To send content to nodejs-repl `C-u` (1 - 3 times) followed by `C-c C-z`
 
-### skewer-mode
+#### skewer-mode
   - Open and attach a browser `M-x run-skewer`
   - Open the REPL `C-c C-z` 
   - Evaluate an expression `C-M-x`
 
-#### Things to do:
- - Style eshell prompt
+### Things to do:
  - Confirm that backups and autosaves are not saved when using `sudo` and `tramp`
  - Python: python-mode, jedi:(show-doc, complete and goto-definition)
  - Make more snippets
