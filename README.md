@@ -18,7 +18,7 @@ This README also serves as a place for me to list the modes that I am planning t
   - Toggle showing only lines with cursor `C-'`
   - Insert increasing numbers for each cursor `mc/insert-numbers`
 
-#### serveryasnippet
+#### yasnippet
   - Create a new snippet `yas-new-snippet` (`C-c C-c` to save)
 
 #### nodejs-repl / toggle-repl
