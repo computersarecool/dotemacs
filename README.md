@@ -1,5 +1,5 @@
 # My Emacs configuration
-*My Emacs configuration, in a repo*
+*My Emacs configuration*
 
 > It's awesome
 
