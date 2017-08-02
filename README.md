@@ -3,9 +3,7 @@
 
 > It's awesome
 
-These are the files that I use to configure Emacs. 
-
-This README also serves as a place for me to list the modes that I am planning to explore more in the future
+These are the files that I use to configure Emacs. This README also serves as a place for me to list the modes that I am planning to explore more in the future.
 
 ### Mode Notes:
 #### neotree
