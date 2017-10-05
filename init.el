@@ -258,6 +258,15 @@
 ;; C++
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
+;; glsl-mode
+(autoload 'glsl-mode "glsl-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.glsl\\'" . glsl-mode))
+(add-to-list 'auto-mode-alist '("\\.vert\\'" . glsl-mode))
+(add-to-list 'auto-mode-alist '("\\.frag\\'" . glsl-mode))
+(add-to-list 'auto-mode-alist '("\\.tesc\\'" . glsl-mode))
+(add-to-list 'auto-mode-alist '("\\.tese\\'" . glsl-mode))
+(add-to-list 'auto-mode-alist '("\\.geom\\'" . glsl-mode))
+
 ;; Non-GUI Things
 (unless window-system
   ;; Linum-mode special formatting
@@ -279,7 +288,8 @@
 (setq wdired-allow-to-change-permissions t)
 (setq wdired-confirm-overwrite t)
 
-;; Styling
+;; Style
+
 ;; Never stop blinking
 (setq blink-cursor-blinks 0)
 ;; Cursor colors
@@ -299,8 +309,6 @@ This one changes the cursor color on each blink. Define colors in `blink-cursor-
     (setq blink-cursor-count (+ 1 blink-cursor-count))
     )
   (internal-show-cursor nil (not (internal-show-cursor-p))))
-
-
 
 
 (set-language-environment "UTF-8")
@@ -340,17 +348,16 @@ the optional argument: force-reverting to true."
     (error "The buffer has been modified"))))
 
 
+;; Set font (this might hide the splash screen)
+(when (member "DejaVu Sans Mono" (font-family-list))
+   (set-face-attribute 'default nil :font "DejaVu Sans Mono"))
+
 ;; Entrance message 
 (add-hook 'after-init-hook
         (lambda ()
           (message "Welcome home %s" (user-login-name))))
 
-
-
-;; Set font (this has the side effect of hiding the splash screen)
-(when (member "DejaVu Sans Mono" (font-family-list))
-   (set-face-attribute 'default nil :font "DejaVu Sans Mono"))
-
+;; Customize
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
