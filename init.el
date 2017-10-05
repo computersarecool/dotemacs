@@ -18,6 +18,7 @@
                     ac-emoji
                     nodejs-repl
                     circe
+                    tramp-term
                     neotree
                     yasnippet
                     flycheck
