@@ -31,11 +31,12 @@ This README also serves as a place for me to list the mode usage notes and modes
 
 ### Things to do:
  - Confirm that backups and autosaves are not saved when using `sudo` and `tramp`
- - Python: python-mode, jedi:(show-doc, complete and goto-definition)
+ - Python: python-mode, jedi (show-doc, complete and goto-definition)
  - Make more snippets
  - Check to see if we can install `yasnippet` without all the extra snippets that come with it
 
 #### Modes to explore further:
+- Buffer-move
 - Hi-loc mode
 - ac-capf
 - ac-emoji

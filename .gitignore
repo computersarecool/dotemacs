@@ -1,9 +1,9 @@
-# Annyoing automatically created files
+# Automatically created files
 .DS_Store
 ido.last
 .mc-lists.el
 
-# Generic emacs folders
+# Generic folders
 games
 url
 vendor
