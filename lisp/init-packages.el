@@ -1,6 +1,7 @@
 ;; List all packages and repos used
 (setq package-list '(
                     exec-path-from-shell
+                    cmake-mode
                     auto-complete
                     buffer-move
                     ac-emoji

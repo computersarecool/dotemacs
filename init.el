@@ -16,10 +16,6 @@
 
 (require 'init-packages)
 (require 'init-linux)
-(require 'init-file-management)
-(require 'init-tramp)
-(require 'init-ansi-term)
-(require 'init-eshell)
 (require 'init-neotree)
 (require 'init-circe)
 (require 'init-mc)
@@ -35,11 +31,15 @@
 (require 'init-cpp)
 (require 'init-glsl)
 (require 'init-tty-settings)
+(require 'init-file-management)
+(require 'init-tramp)
+(require 'init-ansi-term)
+(require 'init-eshell)
 (require 'init-wdired)
 (require 'init-general-coding-style)
-(require 'init-style)
 (require 'init-editor-settings)
 (require 'init-keyboard-shortcuts)
+(require 'init-style)
 
 ;; Load separate custom file
 (when (file-exists-p custom-file)
