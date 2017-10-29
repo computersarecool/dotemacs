@@ -1,5 +1,5 @@
 (unless window-system
-  ;; Linum-mode special formatting
+  ;; Linum-mode formatting
   (defun linum-format-func (line)
     (concat
      (propertize (format linum-format-fmt line) 'face 'linum)
@@ -11,6 +11,7 @@
                           (let ((w (length (number-to-string
                                             (count-lines (point-min) (point-max))))))
                             (concat "%" (number-to-string w) "d")))))
+
   (setq linum-format 'linum-format-func))
 
 (provide 'init-tty-settings)

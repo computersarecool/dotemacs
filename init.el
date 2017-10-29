@@ -14,8 +14,13 @@
 ;; Set custom file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
+
 (require 'init-packages)
-(require 'init-linux)
+
+;; Linux specific configuration
+(unless (eq system-type 'windows-nt)
+  (require 'init-linux))
+
 (require 'init-neotree)
 (require 'init-circe)
 (require 'init-mc)
@@ -36,9 +41,9 @@
 (require 'init-ansi-term)
 (require 'init-eshell)
 (require 'init-wdired)
+(require 'init-keyboard-shortcuts)
 (require 'init-general-coding-style)
 (require 'init-editor-settings)
-(require 'init-keyboard-shortcuts)
 (require 'init-style)
 
 ;; Load separate custom file
