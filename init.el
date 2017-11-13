@@ -24,7 +24,7 @@
 (require 'init-circe)
 (require 'init-mc)
 (require 'init-yasnippet)
-(require 'init-ido)
+;;(require 'init-ido)
 (require 'init-ws-butler)
 (require 'init-autocomplete)
 (require 'init-flycheck)
