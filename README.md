@@ -5,7 +5,7 @@
 
 These are the files that I use to configure Emacs. 
 
-This README also serves as a place for me to list the mode usage notes and modes that I am planning to explore more in the future.
+This readme also serves as a place for me to list the mode usage notes and modes that I am planning to explore more in the future.
 
 ### Mode Notes:
 #### neotree
@@ -35,7 +35,7 @@ This README also serves as a place for me to list the mode usage notes and modes
  - Make more snippets
  - Check to see if we can install `yasnippet` without all the extra snippets that come with it
 
-#### Modes to explore further:
+### Modes to explore further:
 - Buffer-move
 - Hi-loc mode
 - ac-capf
@@ -63,10 +63,10 @@ This README also serves as a place for me to list the mode usage notes and modes
 - Whitespace mode:
     (This currently causes an issue with autocomplete which could be changed by changing the face in the popup)
 - magit:
-  (Unclear if this should be done from within emacs, caused issues with vertical frame splitting)
+  (Unclear if this should be done from within Emacs, Causes issues with vertical frame splitting)
 
 ### License
 :copyright: Willy Nolan 2017
 
-[MIT License](http://en.wikipedia.org/wiki/MIT_License)
+[MIT License](LICENSE.txt)
 
