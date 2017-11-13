@@ -41,9 +41,9 @@
 (require 'init-eshell)
 (require 'init-wdired)
 (require 'init-keyboard-shortcuts)
-(require 'init-general-coding-style)
 (require 'init-editor-settings)
 (require 'init-style)
+(require 'init-helper-functions)
 
 ;; Load separate custom file
 (when (file-exists-p custom-file)
