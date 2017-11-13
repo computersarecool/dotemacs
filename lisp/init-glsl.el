@@ -5,5 +5,6 @@
 (add-to-list 'auto-mode-alist '("\\.tesc\\'" . glsl-mode))
 (add-to-list 'auto-mode-alist '("\\.tese\\'" . glsl-mode))
 (add-to-list 'auto-mode-alist '("\\.geom\\'" . glsl-mode))
+(add-to-list 'auto-mode-alist '("\\.comp\\'" . glsl-mode))
 
 (provide 'init-glsl)
