@@ -33,7 +33,7 @@ This readme also serves as a place for me to list the mode usage notes and modes
  - Confirm that backups and autosaves are not saved when using `sudo` and `tramp`
  - Python: python-mode, jedi (show-doc, complete and goto-definition)
  - Make more snippets
- - Check to see if we can install `yasnippet` without all the extra snippets that come with it
+ - Check to see if it is possible to install `yasnippet` without all the extra snippets that come with it
 
 ### Modes to explore further:
 - Buffer-move
