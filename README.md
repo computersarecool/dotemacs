@@ -7,7 +7,7 @@ These are the files that I use to configure Emacs.
 
 This readme also serves as a place for me to list the mode usage notes and modes that I am planning to explore more in the future.
 
-### Mode Notes:
+### Notes on modes:
 #### neotree
   - Toggle hidden file names `H` 
   - Maximize / minimize neotree `A` 
