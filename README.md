@@ -11,7 +11,7 @@ This repo configures [Emacs](https://www.gnu.org/software/emacs/). This README a
 - Windows
 
 ## How to use this repo:
-- Clone the repo to a user's home directory
+- Clone the repo into a user's home directory
 - Start Emacs
 
 ### Notes on modes:
