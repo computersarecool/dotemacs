@@ -3,15 +3,16 @@
 
 > It's awesome
 
-## What this repo does
+## What this repo does:
 This repo configures [Emacs](https://www.gnu.org/software/emacs/). This README also serves as a place to take notes on different mode usages and list modes that I am planning to explore more in the future.
 
 ## Tested on:
 - Linux
 - Windows
 
-## How to use this repo
-Clone the repo to a user's home directory. Then start Emacs.
+## How to use this repo:
+- Clone the repo to a user's home directory
+- Start Emacs.
 
 ### Notes on modes:
 #### neotree
