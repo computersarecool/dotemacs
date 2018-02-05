@@ -12,7 +12,7 @@ This repo configures [Emacs](https://www.gnu.org/software/emacs/). This README a
 
 ## How to use this repo:
 - Clone the repo to a user's home directory
-- Start Emacs.
+- Start Emacs
 
 ### Notes on modes:
 #### neotree
