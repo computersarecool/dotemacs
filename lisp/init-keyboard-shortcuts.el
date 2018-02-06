@@ -1,3 +1,4 @@
+;; Revert buffers
 (global-set-key (kbd "<f5>")
  (lambda (&optional force-reverting)
    "Interactive call to revert-buffer. Ignoring the auto-save

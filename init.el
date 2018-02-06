@@ -25,7 +25,6 @@
 (require 'init-circe)
 (require 'init-mc)
 (require 'init-yasnippet)
-;;(require 'init-ido)
 (require 'init-ws-butler)
 (require 'init-autocomplete)
 (require 'init-flycheck)
@@ -45,6 +44,7 @@
 (require 'init-editor-settings)
 (require 'init-style)
 (require 'init-helper-functions)
+;;(require 'init-ido)
 
 ;; Load separate custom file
 (when (file-exists-p custom-file)
