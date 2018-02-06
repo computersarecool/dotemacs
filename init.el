@@ -3,10 +3,10 @@
 ;; Make sure we are working with some modern code
 (let ((minver "24.0"))
   (when (version< emacs-version minver)
-    (message "You are running some old-ass emacs. As in %s old." emacs-version)))
+    (message "You are running an old Emacs. As in %s old." emacs-version)))
 
 (when (version< emacs-version "24.5")
-  (message "Your Emacs is old, and some functionality in this config will not work. Please upgrade if possible."))
+  (message "Your Emacs is old, and some functionality in this config will not work. Please upgrade."))
 
 ;; Add lisp directory to load path
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
@@ -14,6 +14,7 @@
 ;; Set custom file path
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
+;; Load an initialize packages
 (require 'init-packages)
 
 ;; Linux specific configuration
