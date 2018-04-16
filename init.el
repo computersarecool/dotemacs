@@ -17,8 +17,9 @@
 ;; Load an initialize packages
 (require 'init-packages)
 
-;; Linux specific configuration
-(unless (eq system-type 'windows-nt)
+;; Linux / Windows specific configuration
+(if (eq system-type 'windows-nt)
+    (require 'init-windows)
   (require 'init-linux))
 
 (require 'init-neotree)

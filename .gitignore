@@ -1,18 +1,20 @@
-# Automatically created files
+# OS created files
 .DS_Store
-ido.last
-.mc-lists.el
 
-# Generic folders
+# Folders
 games
 url
 vendor
 elpa
 tramp
+
+# Eshell
 eshell/*
 !eshell/alias
 
-# Auto-saving folders
+# Autosave folders and files
+.\#*
+\#*
 .saves/*
 !.saves/.gitkeep
 auto-save-list
@@ -22,8 +24,10 @@ ede-projects.el
 ac-comphist.dat
 .yas-compiled-snippets.el
 .python-environments
+ido.last
+.mc-lists.el
 
-.\#*
-\#*
-custom.el
 session.*
+
+# Custom file
+custom.el
