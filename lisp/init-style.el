@@ -17,12 +17,12 @@
   (internal-show-cursor nil (not (internal-show-cursor-p))))
 
 ;; Set font family (this hides the splash screen on some systems)
-(setq default_font "DejaVu Sans Mono")
+(setq default_font "Office Code Pro D")
 (when (member default_font (font-family-list))
    (set-face-attribute 'default nil :font default_font))
 
 ;; Set font size
 (if (eq system-type 'windows-nt)
-  (set-face-attribute 'default nil :height 90))
+  (set-face-attribute 'default nil :height 100))
 
 (provide 'init-style)

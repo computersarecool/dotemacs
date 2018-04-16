@@ -1,9 +1,11 @@
 (setq package--init-file-ensured t)
 
+(setq debug-on-error t)
+
 ;; Make sure we are working with some modern code
 (let ((minver "24.0"))
   (when (version< emacs-version minver)
-    (message "You are running an old Emacs. As in %s old." emacs-version)))
+    (error "You are running an old Emacs. This config requires v%s or higher. Please upgrade" emacs-version)))
 
 (when (version< emacs-version "24.5")
   (message "Your Emacs is old, and some functionality in this config will not work. Please upgrade."))
