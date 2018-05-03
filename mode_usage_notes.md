@@ -1,4 +1,4 @@
-### Notes on modes
+### Mode usage notes
 
 #### neotree
   - Toggle hidden file names `H` 
@@ -21,7 +21,7 @@
   - Open the REPL `C-c C-z` 
   - Evaluate an expression `C-M-x`
 
-### Modes to explore further
+### Modes to explore
 - Buffer-move
 - Hi-loc mode
 - ac-capf
@@ -49,4 +49,4 @@
 - Whitespace mode:
     (This currently causes an issue with autocomplete which could be changed by changing the face in the popup)
 - magit:
-  (Unclear if this should be done from within Emacs, Causes issues with vertical frame splitting)
+  (Unclear if this should be done from within Emacs. Causes issues with vertical frame splitting)

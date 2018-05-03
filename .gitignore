@@ -31,3 +31,4 @@ session.*
 
 # Custom file
 custom.el
+network-security.data

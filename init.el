@@ -37,7 +37,6 @@
 (require 'init-c)
 (require 'init-cpp)
 (require 'init-glsl)
-(require 'init-tty-settings)
 (require 'init-file-management)
 (require 'init-tramp)
 (require 'init-ansi-term)
@@ -47,7 +46,7 @@
 (require 'init-editor-settings)
 (require 'init-style)
 (require 'init-helper-functions)
-;;(require 'init-ido)
+(require 'init-tty-settings)
 
 ;; Load separate custom file
 (when (file-exists-p custom-file)
