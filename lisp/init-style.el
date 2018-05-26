@@ -1,4 +1,4 @@
-;; Set theme
+;; Theme
 (load-theme 'cyberpunk t)
 
 ;; Cursor always blink
@@ -16,13 +16,23 @@
 
   (internal-show-cursor nil (not (internal-show-cursor-p))))
 
-;; Set font family (this hides the splash screen on some Windows systems)
+;; Font family (this hides the splash screen on some Windows systems)
 (setq default_font "Office Code Pro D")
 (when (member default_font (font-family-list))
    (set-face-attribute 'default nil :font default_font))
 
-;; Set font size
+;; Font size
 (if (eq system-type 'windows-nt)
   (set-face-attribute 'default nil :height 100))
+
+;; Highlighted region
+(set-face-attribute 'region nil :background "cyan" :foreground "blue")
+
+;; Rainbow delimeters
+(set-face-attribute 'rainbow-delimiters-unmatched-face nil :foreground "red")
+(set-face-attribute 'rainbow-delimiters-mismatched-face nil :foreground "white")
+(set-face-attribute 'rainbow-delimiters-depth-1-face nil :foreground "cyan")
+(set-face-attribute 'rainbow-delimiters-depth-2-face nil :foreground "orchid1")
+(set-face-attribute 'rainbow-delimiters-depth-3-face nil :foreground "MediumPurple1")
 
 (provide 'init-style)

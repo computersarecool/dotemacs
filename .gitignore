@@ -28,3 +28,6 @@ ido.last
 .mc-lists.el
 session.*
 network-security.data
+
+# Custom file
+custom.el
