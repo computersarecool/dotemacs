@@ -16,7 +16,7 @@
 
   (internal-show-cursor nil (not (internal-show-cursor-p))))
 
-;; Set font family (this hides the splash screen on some systems)
+;; Set font family (this hides the splash screen on some Windows systems)
 (setq default_font "Office Code Pro D")
 (when (member default_font (font-family-list))
    (set-face-attribute 'default nil :font default_font))

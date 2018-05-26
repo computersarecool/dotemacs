@@ -24,6 +24,7 @@
                     markdown-mode
                     dtrt-indent
                     glsl-mode
+                    rust-mode
                     rainbow-mode
                     rainbow-delimiters
                     cyberpunk-theme

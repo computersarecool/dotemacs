@@ -26,9 +26,5 @@ ac-comphist.dat
 .python-environments
 ido.last
 .mc-lists.el
-
 session.*
-
-# Custom file
-custom.el
 network-security.data
