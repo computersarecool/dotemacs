@@ -16,7 +16,7 @@
 ;; Set custom file path
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
-;; Load an initialize packages
+;; Load and initialize packages
 (require 'init-packages)
 
 ;; Linux / Windows specific configuration

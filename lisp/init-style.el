@@ -29,6 +29,7 @@
 (set-face-attribute 'region nil :background "cyan" :foreground "blue")
 
 ;; Rainbow delimeters
+(rainbow-delimiters-mode)
 (set-face-attribute 'rainbow-delimiters-unmatched-face nil :foreground "red")
 (set-face-attribute 'rainbow-delimiters-mismatched-face nil :foreground "white")
 (set-face-attribute 'rainbow-delimiters-depth-1-face nil :foreground "cyan")
