@@ -35,6 +35,7 @@
 (setq default_font "Office Code Pro D")
 (when (member default_font (font-family-list))
   (set-face-attribute 'default nil
+                      :family default_font
                       :font default_font))
 
 (provide 'init-style)
