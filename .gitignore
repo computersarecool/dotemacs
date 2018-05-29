@@ -1,6 +1,3 @@
-# OS created files
-.DS_Store
-
 # Folders
 games
 url
@@ -31,3 +28,9 @@ network-security.data
 
 # Custom file
 custom.el
+
+# OS created files
+.DS_Store
+
+# Server files
+server
