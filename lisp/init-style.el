@@ -16,11 +16,6 @@
 
   (internal-show-cursor nil (not (internal-show-cursor-p))))
 
-;; Font family (this hides the splash screen on some Windows systems)
-(setq default_font "Office Code Pro D")
-(when (member default_font (font-family-list))
-   (set-face-attribute 'default nil :font default_font))
-
 ;; Font size
 (if (eq system-type 'windows-nt)
   (set-face-attribute 'default nil :height 100))
@@ -35,5 +30,11 @@
 (set-face-attribute 'rainbow-delimiters-depth-1-face nil :foreground "cyan")
 (set-face-attribute 'rainbow-delimiters-depth-2-face nil :foreground "orchid1")
 (set-face-attribute 'rainbow-delimiters-depth-3-face nil :foreground "MediumPurple1")
+
+;; Font family (this hides the splash screen on some Windows systems)
+(setq default_font "Office Code Pro D")
+(when (member default_font (font-family-list))
+  (set-face-attribute 'default nil
+                      :font default_font))
 
 (provide 'init-style)
