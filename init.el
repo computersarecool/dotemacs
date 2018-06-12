@@ -39,7 +39,7 @@
 
 (require 'init-mc)
 (require 'init-ws-butler)
-(require 'init-autocomplete)
+(require 'init-company)
 (require 'init-yasnippet)
 (require 'init-wdired)
 (require 'init-repl-toggle)
