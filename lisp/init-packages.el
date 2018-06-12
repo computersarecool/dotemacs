@@ -2,7 +2,7 @@
 (setq package-list '(
                     exec-path-from-shell
                     cmake-mode
-                    auto-complete
+                    company
                     buffer-move
                     ac-emoji
                     circe
