@@ -2,8 +2,8 @@
 (load-theme 'cyberpunk t)
 
 ;; Arguments here are for active and inactive
-(set-frame-parameter (selected-frame) 'alpha '(.85 . 85))
-(add-to-list 'default-frame-alist '(alpha . (.85 . 85)))
+(set-frame-parameter (selected-frame) 'alpha '(.95 . 95))
+(add-to-list 'default-frame-alist '(alpha . (.95 . 95)))
 
 ;; Cursor always blink
 (setq blink-cursor-blinks 0)
