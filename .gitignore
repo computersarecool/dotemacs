@@ -9,14 +9,14 @@ tramp
 eshell/*
 !eshell/alias
 
-# Autosave folders and files
+# Autosave folders, files and "lock" files
 .\#*
 \#*
 .saves/*
 !.saves/.gitkeep
 auto-save-list
 
-# Files created by using extensions
+# Files created by using packages
 ede-projects.el
 ac-comphist.dat
 .yas-compiled-snippets.el
@@ -32,5 +32,5 @@ custom.el
 # OS created files
 .DS_Store
 
-# Server files
+# Emacs server files
 server

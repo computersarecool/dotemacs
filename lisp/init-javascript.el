@@ -29,16 +29,10 @@
 (require 'nodejs-repl)
 
 ;; Tern mode
-(eval-after-load 'tern
-  '(progn
-     (require 'tern-auto-complete)
-     (tern-ac-setup)))
-
 
 ;; JSON mode
 (add-to-list 'auto-mode-alist '("\\.json\\'" . json-mode))
 (setq json-reformat:indent-width 2)
-
 
 ;; Skewer mode
 (skewer-setup)

@@ -1,21 +1,18 @@
-;; List all packages and repos used
+;; List all packages and archives that will be used
 (setq package-list '(
                     exec-path-from-shell
                     cmake-mode
                     company
                     buffer-move
-                    ac-emoji
                     circe
                     tramp-term
                     neotree
                     yasnippet
                     flycheck
-                    jedi
                     multiple-cursors
                     ws-butler
                     nodejs-repl
                     tern
-                    tern-auto-complete
                     js2-mode
                     json-mode
                     js-doc
@@ -37,7 +34,7 @@
 ;; Load installed packages
 (package-initialize)
 
-;; Get list of packages available
+;; Get list of packages available on archives
 (unless package-archive-contents
   (package-refresh-contents))
 

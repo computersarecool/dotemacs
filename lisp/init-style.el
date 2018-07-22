@@ -1,7 +1,7 @@
 ;; Theme
 (load-theme 'cyberpunk t)
 
-;; Arguments here are for active and inactive
+;; Arguments here are for when emacs is active and inactive
 (set-frame-parameter (selected-frame) 'alpha '(.95 . 95))
 (add-to-list 'default-frame-alist '(alpha . (.95 . 95)))
 

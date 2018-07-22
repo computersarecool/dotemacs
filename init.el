@@ -1,5 +1,7 @@
+;; Prevent emacs from adding (package-initialize) to this file
 (setq package--init-file-ensured t)
 
+;; Pause if there are any errors
 (setq debug-on-error t)
 
 ;; Make sure we are working with some modern code
