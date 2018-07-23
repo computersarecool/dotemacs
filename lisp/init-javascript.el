@@ -22,13 +22,14 @@
             (define-key js2-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)
 
             ;; Enable tern mode
-            (tern-mode t)))
+            (tern-mode t)
+	    (add-to-list 'company-backends 'company-tern))
+          )
 
+	  
 
 ;; Node.js REPL
 (require 'nodejs-repl)
-
-;; Tern mode
 
 ;; JSON mode
 (add-to-list 'auto-mode-alist '("\\.json\\'" . json-mode))

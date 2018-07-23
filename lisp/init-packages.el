@@ -3,6 +3,8 @@
                     exec-path-from-shell
                     cmake-mode
                     company
+                    company-jedi
+                    company-tern
                     buffer-move
                     circe
                     tramp-term

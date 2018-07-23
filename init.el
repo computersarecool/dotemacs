@@ -29,6 +29,7 @@
 (require 'init-circe)
 (require 'init-neotree)
 
+(require 'init-company)
 (require 'init-tramp)
 (require 'init-ansi-term)
 (require 'init-eshell)
@@ -41,7 +42,6 @@
 
 (require 'init-mc)
 (require 'init-ws-butler)
-(require 'init-company)
 (require 'init-yasnippet)
 (require 'init-wdired)
 (require 'init-repl-toggle)
