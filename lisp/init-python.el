@@ -1,3 +1,6 @@
+;; Elpy
+(elpy-enable)
+
 ;; Jedi
 (unless (eq system-type 'windows-nt)
   (defun my/python-mode-hook ()

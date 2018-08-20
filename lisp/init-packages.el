@@ -5,6 +5,8 @@
                     company
                     company-jedi
                     company-tern
+                    company-quickhelp
+                    elpy
                     buffer-move
                     circe
                     tramp-term
@@ -30,7 +32,7 @@
                     ))
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")
+                         ("melpa-stable" . "https://stable.melpa.org/packages/")                                              ("melpa" . "http://melpa.milkbox.net/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")))
 
 ;; Load installed packages
