@@ -15,10 +15,10 @@ This contains files to configure [Emacs](https://www.gnu.org/software/emacs/).
 - Start Emacs
 
 ## Project Structure
-The startup file is `init.el`. 
-Most other code is located in the `lisp` directory. 
-Notes on mode usage are located at `mode_usage_notes.md`.
-Any code that changes the style of the editor (regardless of mode) is in `lisp/init-style.el`
+The startup file is `init.el`&nbsp;
+Most other code is located in the `lisp` directory&nbsp;
+Notes on mode usage are located at `mode_usage_notes.md`&nbsp;
+Any code that changes the style of the editor (regardless of mode) is in `lisp/init-style.el`&nbsp;
 
 ### License
 :copyright: Willy Nolan 2017
