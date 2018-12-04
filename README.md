@@ -11,7 +11,7 @@ This contains files to configure [Emacs](https://www.gnu.org/software/emacs/).
 - GUI Emacs for Linux
 
 ## To Use
-- Clone the repo into a user's home directory
+- Clone the repo into a user's home directory and rename to `.emacs.d`
 - Start Emacs
 
 ## Project Structure
