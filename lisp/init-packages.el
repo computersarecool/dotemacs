@@ -14,7 +14,8 @@
                     yasnippet
                     flycheck
                     multiple-cursors
-                    ws-butler
+                    ws-butle
+                    dockerfile-mode
                     nodejs-repl
                     tern
                     js2-mode
