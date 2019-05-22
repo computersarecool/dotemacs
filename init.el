@@ -39,6 +39,7 @@
 (require 'init-cpp)
 (require 'init-glsl)
 (require 'init-flycheck)
+(require 'init-dockerfile)
 
 (require 'init-mc)
 (require 'init-ws-butler)
