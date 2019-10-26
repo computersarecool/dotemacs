@@ -11,6 +11,7 @@
                     circe
                     tramp-term
                     neotree
+                    auctex
                     yasnippet
                     flycheck
                     multiple-cursors

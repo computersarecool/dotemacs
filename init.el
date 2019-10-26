@@ -1,7 +1,7 @@
 ;; Prevent emacs from adding (package-initialize) to this file
 (setq package--init-file-ensured t)
 
-;; Pause if there are any errors
+;; Pause if there are any startup errors
 (setq debug-on-error t)
 
 ;; Make sure we are working with some modern code
@@ -15,7 +15,7 @@
 ;; Add lisp directory to load path
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
-;; Set custom file path
+;; Set custom custom file directory
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 ;; Load and initialize packages
@@ -26,6 +26,7 @@
     (require 'init-windows)
   (require 'init-linux))
 
+;; Mode customization files
 (require 'init-circe)
 (require 'init-neotree)
 
@@ -53,6 +54,8 @@
 (require 'init-keyboard-shortcuts)
 (require 'init-editor-settings)
 (require 'init-style)
+
+(require 'init-auctex)
 
 ;; Load separate custom file
 (when (file-exists-p custom-file)

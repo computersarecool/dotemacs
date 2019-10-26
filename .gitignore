@@ -34,3 +34,4 @@ custom.el
 
 # Emacs server files
 server
+elpy/*
