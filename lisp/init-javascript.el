@@ -22,8 +22,7 @@
             (define-key js2-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)
 
             ;; Enable tern mode
-            (tern-mode t)
-	    (add-to-list 'company-backends 'company-tern))
+)
           )
 
 	  

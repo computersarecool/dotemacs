@@ -4,12 +4,11 @@
                     cmake-mode
                     company
                     company-jedi
-                    company-tern
                     company-quickhelp
                     elpy
                     buffer-move
                     circe
-                    tramp-term
+                    ;;tramp-term Missing marmalade
                     neotree
                     auctex
                     yasnippet
@@ -21,12 +20,12 @@
                     tern
                     js2-mode
                     json-mode
-                    js-doc
+                    ;;js-doc Missing marmalade
                     skewer-mode
                     repl-toggle
                     markdown-mode
                     dtrt-indent
-                    glsl-mode
+                    ;;glsl-mode Missing marmalade
                     rust-mode
                     rainbow-mode
                     rainbow-delimiters
@@ -34,8 +33,9 @@
                     ))
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("melpa-stable" . "https://stable.melpa.org/packages/")                                              ("melpa" . "http://melpa.milkbox.net/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")))
+                         ("melpa-stable" . "https://stable.melpa.org/packages/")
+			 ("melpa" . "http://melpa.milkbox.net/packages/")
+                         ))
 
 ;; Load installed packages
 (package-initialize)
