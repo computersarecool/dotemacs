@@ -8,7 +8,6 @@
                     elpy
                     buffer-move
                     circe
-                    ;;tramp-term Missing marmalade
                     neotree
                     auctex
                     yasnippet
@@ -20,21 +19,22 @@
                     tern
                     js2-mode
                     json-mode
-                    ;;js-doc Missing marmalade
                     skewer-mode
                     repl-toggle
                     markdown-mode
                     dtrt-indent
-                    ;;glsl-mode Missing marmalade
                     rust-mode
                     rainbow-mode
                     rainbow-delimiters
                     cyberpunk-theme
                     ))
 
+;; Marmalade is currently not working and therefore can not install the following packages:
+;; glsl-mode, tramp-term, js-doc
+
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("melpa-stable" . "https://stable.melpa.org/packages/")
-			 ("melpa" . "http://melpa.milkbox.net/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")
                          ))
 
 ;; Load installed packages
