@@ -26,6 +26,6 @@
 	(lambda ()
 		(rainbow-mode 1)))
 
-(add-hook 'find-file-hook 'linum-mode)
+(add-hook 'find-file-hook 'display-line-numbers-mode)
 
 (provide 'init-editor-settings)

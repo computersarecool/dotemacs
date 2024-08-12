@@ -4,15 +4,16 @@
 > It's awesome
 
 ## Description
-This contains files to configure [Emacs](https://www.gnu.org/software/emacs/).
+This contains files to configure [Emacs](https://www.gnu.org/software/emacs/)
 
 ## Tested On
 - GUI Emacs for Windows
+- GUI Emacs for Mac
 - GUI Emacs for Linux
 
 ## To Use
-- Clone the repo into a user's home directory and rename to `.emacs.d`
-- Start Emacs
+- Clone this repo into the intended user's home directory and rename it to `.emacs.d`
+- Start Emacs (a restart of Emacs may be required the first time because packages are downladed)
 
 ## Project Structure
 - The startup file is `init.el`

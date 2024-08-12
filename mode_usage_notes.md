@@ -1,6 +1,5 @@
 ### Mode usage notes
-
-These are helpful notes as packages are explored
+Helpful notes as packages are explored
 
 #### neotree
   - Toggle hidden file names `H` 
@@ -23,7 +22,7 @@ These are helpful notes as packages are explored
   - Open the REPL `C-c C-z` 
   - Evaluate an expression `C-M-x`
 
-### Modes in need of more exploration
+### Modes in need exploration
 - Buffer-move
 - Hi-loc mode
 - ac-capf

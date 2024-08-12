@@ -2,7 +2,7 @@
 (setq package--init-file-ensured t)
 
 ;; Pause if there are any startup errors
-(setq debug-on-error t)
+;; (setq debug-on-error t)
 
 ;; Make sure we are working with some modern code
 (let ((minver "24.0"))
@@ -15,13 +15,19 @@
 ;; Add lisp directory to load path
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
-;; Set custom custom file directory
+;; Set custom file directory
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 ;; Load and initialize packages
 (require 'init-packages)
 
 ;; Linux / Windows specific configuration
+(cond 
+  ((eq system-type 'windows-nt) (require 'init-windows))
+  ((eq system-type 'gnu/linux) (require 'init-linux))
+  ((eq system-type 'darwin) (require 'init-mac)))  
+
+
 (if (eq system-type 'windows-nt)
     (require 'init-windows)
   (require 'init-linux))
@@ -65,4 +71,3 @@
 (add-hook 'after-init-hook
         (lambda ()
           (message "Welcome home %s" (user-login-name))))
-
