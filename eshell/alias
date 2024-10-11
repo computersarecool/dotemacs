@@ -1,4 +1,2 @@
-alias cur:  $*
 alias ll ls -lah
-alias windowsmake cmake -G "Visual Studio 15 2017 Win64" ..
 alias done $*

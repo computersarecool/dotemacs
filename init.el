@@ -21,7 +21,7 @@
 ;; Load and initialize packages
 (require 'init-packages)
 
-;; Linux / Windows specific configuration
+;; System specific configuration
 (if (eq system-type 'windows-nt)
     (require 'init-windows)
   (require 'init-linux))
